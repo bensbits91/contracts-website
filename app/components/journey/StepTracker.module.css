@@ -1,0 +1,69 @@
+.stepTracker {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 20px;
+
+   .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+
+      .stepContent {
+         display: flex;
+         align-items: center;
+
+         .stepIcon {
+            width: 35px;
+            height: 35px;
+            /* border-radius: 50%; */
+            background-color: var(--background);
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+
+            &.active {
+               color: blue;
+            }
+
+            &.completed {
+               color: green;
+            }
+         }
+
+         .stepText {
+            font-size: 16px;
+         }
+
+         .stepChoice {
+            display: flex;
+            align-items: center;
+
+            .stepChoiceIcon {
+               width: 24px;
+               height: 24px;
+            }
+         }
+      }
+
+      .stepLine {
+         width: 2px;
+         height: 60px;
+         position: absolute;
+         top: 32px;
+         left: 16px;
+         background-image: linear-gradient(
+            to bottom,
+            #aaa 50%,
+            rgba(255, 255, 255, 0) 0%
+         );
+         background-size: 2px 10px;
+         background-repeat: repeat-y;
+      }
+   }
+}
