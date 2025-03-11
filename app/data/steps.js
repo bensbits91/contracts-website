@@ -17,12 +17,14 @@ export const steps = [
       slug: 'start',
       heading: 'What kind of project?',
       description: 'Do you need a website, an app, or a mix of both?',
+      moreInfo: 'This is more info about the question',
       nextSlug: 'data-storage',
       choices: [
          {
             text: 'Static Website',
             description:
-               "Pages with static content that doesn't change. No user interaction."
+               "Pages with static content that doesn't change. No user interaction.",
+            moreInfo: 'This is more info about the choice'
          },
          {
             text: 'App',

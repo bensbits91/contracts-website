@@ -17,4 +17,21 @@
       border-color: green;
       color: #fff;
    }
+
+   .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .iconWrap {
+         height: 40px;
+         width: 40px;
+      }
+
+      .textWrap {
+         flex: 1;
+         padding: 0 10px;
+         /* style={{ marginLeft: '10px', width: 'calc(100% - 50px)' }} */
+      }
+   }
 }

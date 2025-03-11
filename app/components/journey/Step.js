@@ -4,6 +4,8 @@ import useJourneyStore from '@/app/store/useJourneyStore';
 import Form from './Form';
 import Choices from './Choices';
 
+// todo: subtle animated transition between steps
+
 const Step = () => {
    const { currentStep, initialize } = useJourneyStore();
    const { heading, description, form, choices } = currentStep;

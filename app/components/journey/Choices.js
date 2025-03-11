@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
+import {
+   CircleIcon,
+   CircleCaratIcon,
+   CircleCheckIcon,
+   PencilIcon
+} from '@/app/components/icons';
 import styles from './Choices.module.css';
 import classNames from '@/utils/classNames';
 
@@ -36,6 +42,14 @@ const Choices = () => {
       });
    };
 
+   const Icon = ({ isSelected }) => {
+      if (isSelected) {
+         return <CircleCheckIcon />;
+      } else {
+         return <CircleIcon />;
+      }
+   };
+
    return (
       <>
          {choices.map((choice, index) => {
@@ -45,8 +59,15 @@ const Choices = () => {
                   <div
                      className={classNames(styles.choice, isSelected && styles.selected)}
                      onClick={() => handleChoiceClick(choice)}>
-                     <div>{choice.text}</div>
-                     {choice.description && <div>{choice.description}</div>}
+                     <div className={styles.content}>
+                        <div className={styles.iconWrap}>
+                           <Icon isSelected={isSelected} />
+                        </div>
+                        <div className={styles.textWrap}>
+                           <div>{choice.text}</div>
+                           {choice.description && <div>{choice.description}</div>}
+                        </div>
+                     </div>
                   </div>
                   {choice.text === 'Write my own' && isSelected && (
                      <div>
