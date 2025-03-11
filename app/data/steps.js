@@ -1,10 +1,22 @@
-import next from 'next';
+const notSure = {
+   text: 'Not sure',
+   description: "I'm not sure what I need. Let's figure this out together."
+};
+
+const writeOwn = {
+   text: 'Write my own',
+   description: "I'll write my own answer"
+};
+
+const commonChoices = [writeOwn, notSure];
+
+// todo: moreInfo that shows if you click a question mark icon
 
 export const steps = [
    {
       slug: 'start',
       heading: 'What kind of project?',
-      description: 'Do you need a website, app, or something in between?',
+      description: 'Do you need a website, an app, or a mix of both?',
       nextSlug: 'data-storage',
       choices: [
          {
@@ -15,23 +27,20 @@ export const steps = [
          {
             text: 'App',
             description:
-               'Users will interact with the app, click buttons, fill out forms, etc.'
+               'Users will interact with the app, click buttons, fill out forms, save things, etc.'
          },
          {
             text: 'Hybrid',
             description:
                'A website with some pages that have dynamic content and user interaction'
          },
-         {
-            text: 'Not sure',
-            description: "I'm not sure what I need. I need help figuring it out."
-         }
+         ...commonChoices
       ]
    },
    {
       slug: 'data-storage',
       heading: 'Data Storage',
-      description: 'This is step 2',
+      description: 'Will you need to store data?',
       nextSlug: 'contact',
       choices: [
          {
@@ -45,34 +54,31 @@ export const steps = [
                'I need to store data related to my app or website. This could be user data, info about your products and services, etc.',
             nextSlug: 'db-type'
          },
-         {
-            text: 'Not sure',
-            description: "I'm not sure what I need. I need help figuring it out."
-         }
+         ...commonChoices
       ]
    },
    {
       slug: 'db-type',
+      showIf: { stepSlug: 'data-storage', choiceText: 'Need to store data' },
       heading: 'Database Type',
       description: 'This is step 3',
       nextSlug: 'db-access',
       choices: [
          {
             text: 'Relational Database',
-            description: 'SQL databases like MySQL, PostgreSQL, etc.'
+            description:
+               'SQL databases like MySQL, PostgreSQL, etc. These are good for structured data.'
          },
          {
             text: 'NoSQL Database',
-            description: 'MongoDB, Cassandra, etc.'
+            description: 'MongoDB, Cassandra, etc. These are good for unstructured data.'
          },
-         {
-            text: 'Not sure',
-            description: "I'm not sure what I need. I need help figuring it out."
-         }
+         ...commonChoices
       ]
    },
    {
       slug: 'db-access',
+      showIf: { stepSlug: 'data-storage', choiceText: 'Need to store data' },
       heading: 'Database Access',
       description: 'Will users need to be able to add, edit, or delete data?',
       nextSlug: 'contact',
@@ -86,16 +92,13 @@ export const steps = [
             text: 'User access',
             description: 'Users will be able to add, edit, or delete data.'
          },
-         {
-            text: 'Not sure',
-            description: "I'm not sure what I need. I need help figuring it out."
-         }
+         ...commonChoices
       ]
    },
    {
       slug: 'contact',
       heading: 'Contact Info',
-      description: 'Let\'s connect!',
+      description: "Let's connect!",
       nextSlug: 'submit',
       form: [
          {

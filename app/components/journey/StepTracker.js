@@ -1,3 +1,5 @@
+'use client';
+import useJourneyStore from '@/app/store/useJourneyStore';
 import {
    CircleIcon,
    CircleCaratIcon,
@@ -8,15 +10,25 @@ import { steps } from '@/app/data/steps';
 import styles from './StepTracker.module.css';
 import classNames from '@/utils/classNames';
 
-const StepTracker = ({ currentStep, userChoices, userInputs, handleNavigate }) => {
-   console.log('bb ~ StepTracker.js:12 ~ StepTracker ~ userInputs:', userInputs);
+const StepTracker = () => {
+   const { currentStep, userChoices, userInputs, handleNavigate } = useJourneyStore();
+
    return (
       <div className={styles.stepTracker}>
          {steps.map((step, index) => {
-            const isActive = step.slug === currentStep.slug;
-            const userChoice = userChoices[step.slug];
-            const isFormCompleted = step.slug === 'contact' && userInputs.email;
-            const isStepCompleted = userChoice || isFormCompleted;
+            const { slug, showIf } = step;
+            const isActive = slug === currentStep.slug;
+            const userChoice = userChoices && userChoices[slug];
+            const isContactFormCompleted = slug === 'contact' && userInputs?.email;
+            const isStepCompleted = userChoice || isContactFormCompleted;
+
+            const shouldHide = showIf
+               ? userChoices[showIf.stepSlug] !== showIf.choiceText
+               : false;
+
+            if (shouldHide) {
+               return null; // todo: if user selects a choice that shows a step, fills in data, then goes back and changes to hide that step, the data should be cleared
+            }
 
             const StepIcon = () =>
                isActive ? (
@@ -42,7 +54,6 @@ const StepTracker = ({ currentStep, userChoices, userInputs, handleNavigate }) =
                         <StepIcon />
                      </div>
                      <div className={styles.stepText}>{step.heading}</div>
-                     {/* {isActive && <div>Active</div>} */}
                      {userChoice && (
                         <div className={styles.stepChoice}>
                            {userChoice}{' '}

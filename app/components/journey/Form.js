@@ -1,7 +1,10 @@
-'use client';
 import { useState, useEffect } from 'react';
+import useJourneyStore from '@/app/store/useJourneyStore';
 
-const Form = ({ form, userInputs, handleForm, nextSlug }) => {
+const Form = () => {
+   const { currentStep, userInputs, handleForm } = useJourneyStore();
+   const { form, nextSlug } = currentStep;
+
    const [formData, setFormData] = useState({});
    const [isFormValid, setIsFormValid] = useState(false);
 
@@ -53,6 +56,15 @@ const Form = ({ form, userInputs, handleForm, nextSlug }) => {
                   <button type='submit' disabled={!isFormValid}>
                      {field.name}
                   </button>
+               ) : field.type == 'textarea' ? (
+                  <textarea
+                     rows='6'
+                     cols='60'
+                     name={field.name}
+                     value={formData[field.name.toLowerCase()] || ''}
+                     required={field.required}
+                     onChange={handleInputChange}
+                  />
                ) : (
                   <label>
                      {field.name}
