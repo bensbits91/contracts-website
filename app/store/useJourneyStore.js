@@ -4,12 +4,13 @@ import { steps } from '@/app/data/steps';
 
 const initialStep = steps.find(step => step.slug === 'start');
 
-const useJourneyStore = create(set => ({
+const useJourneyStore = create((set, get) => ({
    currentStep: initialStep,
    userInfo: null,
    userInputs: {},
    userChoices: {},
    customChoices: {},
+   showHelp: false,
    initialize: () => {
       const clientInfo = collectUserInfo();
       console.log('bb ~ useJourneyStore.js:14 ~ clientInfo:', clientInfo);
@@ -34,10 +35,14 @@ const useJourneyStore = create(set => ({
          const shouldNavigate =
             choice.text !== 'Write my own' || choice.customText?.trim();
 
+         if (shouldNavigate && nextStep) {
+            get().handleNavigate(nextStep);
+         }
+
          return {
             userChoices: updatedChoices,
             customChoices: updatedCustomChoices,
-            currentStep: (shouldNavigate && nextStep) || state.currentStep
+            currentStep: state.currentStep
          };
       });
    },
@@ -53,14 +58,22 @@ const useJourneyStore = create(set => ({
             console.log('Final Data:', finalData);
          }
          const nextStep = steps.find(s => s.slug === nextSlug);
+
+         get().handleNavigate(nextStep);
+
          return {
             userInputs: updatedInputs,
-            currentStep: nextStep || state.currentStep
+            currentStep: state.currentStep
          };
       });
    },
    handleNavigate: step => {
-      set({ currentStep: step });
+      setTimeout(() => {
+         set({ currentStep: step });
+      }, 300);
+   },
+   handleHelp: () => {
+      set(state => ({ showHelp: !state.showHelp }));
    }
 }));
 

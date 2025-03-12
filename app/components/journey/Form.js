@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
+import { Button } from '@/app/components/misc';
 
 const Form = () => {
    const { currentStep, userInputs, handleForm } = useJourneyStore();
@@ -13,8 +14,10 @@ const Form = () => {
       if (form) {
          const initialFormData = {};
          form.forEach(field => {
-            initialFormData[field.name.toLowerCase()] =
-               userInputs[field.name.toLowerCase()] || '';
+            const lowercaseName = field.name.toLowerCase();
+            if (lowercaseName !== 'next' && lowercaseName !== 'submit') {
+               initialFormData[lowercaseName] = userInputs[lowercaseName] || '';
+            }
          });
          setFormData(initialFormData);
       }
@@ -22,10 +25,12 @@ const Form = () => {
 
    const handleInputChange = e => {
       const { name, value } = e.target;
-      setFormData(prevData => ({
-         ...prevData,
-         [name.toLowerCase()]: value
-      }));
+      if (name !== 'next' && name !== 'submit') {
+         setFormData(prevData => ({
+            ...prevData,
+            [name.toLowerCase()]: value
+         }));
+      }
    };
 
    useEffect(() => {
@@ -52,10 +57,10 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
          {form.map((field, index) => (
             <div key={index}>
-               {field.type == 'button' ? (
-                  <button type='submit' disabled={!isFormValid}>
+               {field.type == 'button' || field.type == 'submit' ? (
+                  <Button type='submit' disabled={!isFormValid}>
                      {field.name}
-                  </button>
+                  </Button>
                ) : field.type == 'textarea' ? (
                   <textarea
                      rows='6'

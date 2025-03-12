@@ -53,17 +53,29 @@ const StepTracker = () => {
                         )}>
                         <StepIcon />
                      </div>
-                     <div className={styles.stepText}>{step.heading}</div>
-                     {userChoice && (
-                        <div className={styles.stepChoice}>
-                           {userChoice}{' '}
-                           {!isActive && (
-                              <div className={styles.stepChoiceIcon}>
-                                 <PencilIcon />
-                              </div>
-                           )}
+                     <div>
+                        <div
+                           className={classNames(
+                              styles.stepText,
+                              isActive && styles.activeStepText
+                           )}>
+                           {step.heading}
                         </div>
-                     )}
+                        {userChoice && (
+                           <div
+                              className={classNames(
+                                 styles.stepChoice,
+                                 isActive && styles.activeStepChoice
+                              )}>
+                              {userChoice}
+                              {!isActive && (
+                                 <div className={styles.stepChoiceIcon}>
+                                    <PencilIcon />
+                                 </div>
+                              )}
+                           </div>
+                        )}
+                     </div>
                   </div>
                   {index < steps.length - 1 && <div className={styles.stepLine}></div>}
                </div>

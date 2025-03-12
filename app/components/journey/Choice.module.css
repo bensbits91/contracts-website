@@ -1,21 +1,21 @@
 .choice {
    padding: 10px;
    margin: 10px;
-   border: 1px solid #ccc;
+   border: 1px solid var(--blue);
    border-radius: 5px;
    cursor: pointer;
    transition: all 0.3s;
 
    &:hover {
-      background-color: #aaa;
-      color: #333;
+      background-color: var(--blue);
+      color: color-mix(in oklab, var(--blue) 50%, black);
    }
 
    &.selected,
    &.selected:hover {
-      background-color: green;
-      border-color: green;
-      color: #fff;
+      background-color: var(--lime);
+      border-color: var(--lime);
+      color: color-mix(in oklab, var(--lime) 50%, black);
    }
 
    .content {
@@ -31,7 +31,6 @@
       .textWrap {
          flex: 1;
          padding: 0 10px;
-         /* style={{ marginLeft: '10px', width: 'calc(100% - 50px)' }} */
       }
    }
 }

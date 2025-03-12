@@ -1,0 +1,20 @@
+.button {
+   padding: 10px;
+   margin: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.3s;
+
+   &:hover {
+      background-color: #aaa;
+      color: #333;
+   }
+
+   &.selected,
+   &.selected:hover {
+      background-color: var(--lime);
+      border-color: var(--lime);
+      color: color-mix(in oklab, var(--lime) 50%, black);
+   }
+}

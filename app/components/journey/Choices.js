@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
-import {
-   CircleIcon,
-   CircleCaratIcon,
-   CircleCheckIcon,
-   PencilIcon
-} from '@/app/components/icons';
-import styles from './Choices.module.css';
-import classNames from '@/utils/classNames';
+import Choice from './Choice';
+import CustomChoice from './CustomChoice';
 
 const Choices = () => {
    const { currentStep, userChoices, customChoices, handleChoice } = useJourneyStore();
@@ -42,47 +36,24 @@ const Choices = () => {
       });
    };
 
-   const Icon = ({ isSelected }) => {
-      if (isSelected) {
-         return <CircleCheckIcon />;
-      } else {
-         return <CircleIcon />;
-      }
-   };
-
    return (
       <>
          {choices.map((choice, index) => {
             const isSelected = selectedChoice === choice.text;
             return (
                <div key={index}>
-                  <div
-                     className={classNames(styles.choice, isSelected && styles.selected)}
-                     onClick={() => handleChoiceClick(choice)}>
-                     <div className={styles.content}>
-                        <div className={styles.iconWrap}>
-                           <Icon isSelected={isSelected} />
-                        </div>
-                        <div className={styles.textWrap}>
-                           <div>{choice.text}</div>
-                           {choice.description && <div>{choice.description}</div>}
-                        </div>
-                     </div>
-                  </div>
+                  <Choice
+                     choice={choice}
+                     isSelected={isSelected}
+                     handleChoiceClick={handleChoiceClick}
+                  />
                   {choice.text === 'Write my own' && isSelected && (
-                     <div>
-                        <textarea
-                           rows='6'
-                           cols='60'
-                           name='customChoice'
-                           placeholder='Write your own'
-                           onChange={handleCustomChoiceChange}
-                           value={customChoiceText}
-                        />
-                        <button onClick={() => handleCustomChoiceSave(choice)}>
-                           Save
-                        </button>
-                     </div>
+                     <CustomChoice
+                        choice={choice}
+                        customChoiceText={customChoiceText}
+                        handleCustomChoiceChange={handleCustomChoiceChange}
+                        handleCustomChoiceSave={handleCustomChoiceSave}
+                     />
                   )}
                </div>
             );
