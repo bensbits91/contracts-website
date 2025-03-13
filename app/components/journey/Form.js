@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
-import { Button } from '@/app/components/misc';
+import { Button, TextInput, Textarea } from '@/app/components/inputs';
+import styles from './Form.module.css';
 
 const Form = () => {
    const { currentStep, userInputs, handleForm } = useJourneyStore();
@@ -54,7 +55,7 @@ const Form = () => {
    };
 
    return (
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
          {form.map((field, index) => (
             <div key={index}>
                {field.type == 'button' || field.type == 'submit' ? (
@@ -62,26 +63,22 @@ const Form = () => {
                      {field.name}
                   </Button>
                ) : field.type == 'textarea' ? (
-                  <textarea
-                     rows='6'
-                     cols='60'
+                  <Textarea
+                     placeholder="Optional: Share anything you like. Anything that might help me understand what you're looking for."
                      name={field.name}
                      value={formData[field.name.toLowerCase()] || ''}
                      required={field.required}
                      onChange={handleInputChange}
                   />
                ) : (
-                  <label>
-                     {field.name}
-                     {field.required && <span>*</span>}
-                     <input
-                        type={field.type}
-                        name={field.name}
-                        value={formData[field.name.toLowerCase()] || ''}
-                        required={field.required}
-                        onChange={handleInputChange}
-                     />
-                  </label>
+                  <TextInput
+                     label={field.name}
+                     type={field.type}
+                     name={field.name}
+                     value={formData[field.name.toLowerCase()] || ''}
+                     required={field.required}
+                     onChange={handleInputChange}
+                  />
                )}
             </div>
          ))}

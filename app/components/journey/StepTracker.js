@@ -20,10 +20,21 @@ const StepTracker = () => {
             const isActive = slug === currentStep.slug;
             const userChoice = userChoices && userChoices[slug];
             const isContactFormCompleted = slug === 'contact' && userInputs?.email;
-            const isStepCompleted = userChoice || isContactFormCompleted;
+            const isStepCompleted =
+               userChoice ||
+               isContactFormCompleted ||
+               (slug === 'submit' && currentStep.slug === 'end'); // make the submit step completed if the user is on the end step
+
+            const isDisabled = slug === 'submit' && !userInputs?.email;
 
             const shouldHide = showIf
-               ? userChoices[showIf.stepSlug] !== showIf.choiceText
+               ? !showIf.some(condition =>
+                    condition.choiceText
+                       ? userChoices[condition.stepSlug] === condition.choiceText
+                       : userChoices.hasOwnProperty(condition.stepSlug)
+                 )
+               : slug === 'end'
+               ? true
                : false;
 
             if (shouldHide) {
@@ -39,11 +50,13 @@ const StepTracker = () => {
                   <CircleIcon />
                );
 
+            const needsLineBelowIndex = steps.length - 2; // account for the last step being hidden
+
             return (
                <div
                   key={index}
-                  className={styles.step}
-                  onClick={() => handleNavigate(step)}>
+                  className={classNames(styles.step, isDisabled && styles.disabled)}
+                  onClick={isDisabled ? null : () => handleNavigate(step)}>
                   <div className={styles.stepContent}>
                      <div
                         className={classNames(
@@ -53,7 +66,7 @@ const StepTracker = () => {
                         )}>
                         <StepIcon />
                      </div>
-                     <div>
+                     <div className={styles.stepTextWrap}>
                         <div
                            className={classNames(
                               styles.stepText,
@@ -67,7 +80,7 @@ const StepTracker = () => {
                                  styles.stepChoice,
                                  isActive && styles.activeStepChoice
                               )}>
-                              {userChoice}
+                              <div>{userChoice}</div>
                               {!isActive && (
                                  <div className={styles.stepChoiceIcon}>
                                     <PencilIcon />
@@ -77,7 +90,7 @@ const StepTracker = () => {
                         )}
                      </div>
                   </div>
-                  {index < steps.length - 1 && <div className={styles.stepLine}></div>}
+                  {index < needsLineBelowIndex && <div className={styles.stepLine}></div>}
                </div>
             );
          })}

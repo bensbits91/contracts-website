@@ -1,0 +1,22 @@
+.inputWrap {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+
+   .label {
+      flex-basis: 50px;
+   }
+
+   .input {
+      height: 30px;
+      flex-basis: 300px;
+      padding: 6px;
+      background-color: light-dark(#e8f0fe, #465a7e66);
+      border: 1px solid var(--blue);
+      border-radius: 3px;
+
+      &::placeholder {
+         color: color-mix(in oklab, var(--space-gray) 50%, white);
+      }
+   }
+}

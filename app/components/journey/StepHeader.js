@@ -1,23 +1,28 @@
 import useJourneyStore from '@/app/store/useJourneyStore';
-import { Toggle } from '@/app/components/misc';
+import { Heading } from '@/app/components/typography';
+import { Toggle } from '@/app/components/inputs';
 import styles from './StepHeader.module.css';
 
 const StepHeader = () => {
    const { currentStep, handleHelp, showHelp } = useJourneyStore();
-   const { heading, description } = currentStep;
+   const { heading, description, hasHelp = true } = currentStep;
 
    return (
       <div className={styles.headWrap}>
-         <div>
-            <h2>{heading}</h2>
+         <div className={styles.textWrap}>
+            <Heading level='2' color='blue'>{heading}</Heading>
             <p>{description}</p>
          </div>
-         <Toggle
-            isOn={showHelp}
-            offText='Show help'
-            onText='Hide help'
-            onChange={handleHelp}
-         />
+         {hasHelp && (
+            <div className={styles.toggleWrap}>
+               <Toggle
+                  isOn={showHelp}
+                  offText='Show help'
+                  onText='Hide help'
+                  onChange={handleHelp}
+               />
+            </div>
+         )}
       </div>
    );
 };

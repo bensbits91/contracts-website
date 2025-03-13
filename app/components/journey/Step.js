@@ -4,6 +4,8 @@ import useJourneyStore from '@/app/store/useJourneyStore';
 import StepHeader from './StepHeader';
 import Choices from './Choices';
 import Form from './Form';
+import ChoiceHelp from './ChoiceHelp';
+import EndStep from './EndStep';
 
 // todo: subtle animated transition between steps
 
@@ -17,10 +19,11 @@ const Step = () => {
 
    return (
       <div>
-         <StepHeader />
-         {moreInfo && showHelp && <p>{moreInfo}</p>}
+         {currentStep.slug !== 'end' && <StepHeader />}
+         {moreInfo && showHelp && <ChoiceHelp choice={currentStep} />}
          {choices && <Choices />}
          {form && <Form />}
+         {currentStep.slug === 'end' && <EndStep step={currentStep} />}
       </div>
    );
 };

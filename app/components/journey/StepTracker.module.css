@@ -19,7 +19,7 @@
             width: 35px;
             height: 35px;
             background-color: var(--background);
-            color: #aaa;
+            color: color-mix(in oklab, var(--space-gray) 50%, white);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -35,30 +35,41 @@
             }
          }
 
-         .stepText {
-            color: color-mix(in oklab, var(--space-gray) 50%, white);
-            font-size: 16px;
-
-            &.activeStepText {
-               color: var(--blue);
+         .stepTextWrap {
+            * {
+               transition: color 0.3s;
             }
-         }
 
-         .stepChoice {
-            display: flex;
-            align-items: center;
-            color: color-mix(in oklab, var(--lime) 40%, white);
-            height: 24px;
-
-            .stepChoiceIcon {
+            .stepText {
                color: color-mix(in oklab, var(--space-gray) 50%, white);
-               width: 24px;
-               height: 24px;
-               margin-left: 4px;
+               font-size: 16px;
+
+               &.activeStepText {
+                  color: var(--blue);
+               }
             }
 
-            &.activeStepChoice {
-               color: color-mix(in oklab, var(--blue) 40%, white);
+            .stepChoice {
+               display: flex;
+               align-items: center;
+               color: color-mix(in oklab, var(--lime) 40%, white);
+
+               .stepChoiceIcon {
+                  color: color-mix(in oklab, var(--space-gray) 50%, white);
+                  width: 24px;
+                  height: 24px;
+                  margin-left: 4px;
+               }
+
+               &.activeStepChoice {
+                  color: color-mix(in oklab, var(--blue) 40%, white);
+               }
+            }
+
+            &:hover {
+               * {
+                  color: var(--yellow);
+               }
             }
          }
       }
@@ -76,6 +87,16 @@
          );
          background-size: 2px 10px;
          background-repeat: repeat-y;
+      }
+
+      &.disabled {
+         cursor: not-allowed;
+
+         .stepTextWrap:hover {
+            * {
+               color: color-mix(in oklab, var(--space-gray) 50%, white);
+            }
+         }
       }
    }
 }

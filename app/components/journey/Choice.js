@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
 import ChoiceHelp from './ChoiceHelp';
+import { Heading } from '@/app/components/typography';
 import { CircleIcon, CircleCheckIcon } from '@/app/components/icons';
 import styles from './Choice.module.css';
 import classNames from '@/utils/classNames';
@@ -28,7 +29,7 @@ const Choice = ({ choice, isSelected, handleChoiceClick }) => {
                <Icon isSelected={isSelected} />
             </div>
             <div className={styles.textWrap}>
-               <div>{choice.text}</div>
+               <Heading level='3'>{choice.text}</Heading>
                {choice.description && <div>{choice.description}</div>}
             </div>
          </div>

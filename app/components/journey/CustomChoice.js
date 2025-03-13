@@ -1,4 +1,4 @@
-import { Button } from '@/app/components/misc';
+import { Button, Textarea } from '@/app/components/inputs';
 import styles from './CustomChoice.module.css';
 
 const CustomChoice = ({
@@ -9,9 +9,7 @@ const CustomChoice = ({
 }) => {
    return (
       <div className={styles.wrap}>
-         <textarea
-            rows='4'
-            cols='50'
+         <Textarea
             name='customChoice'
             placeholder='Write your own'
             onChange={handleCustomChoiceChange}
