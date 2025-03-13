@@ -1,9 +1,9 @@
 import useJourneyStore from '@/app/store/useJourneyStore';
-import { Button } from '@/app/components/misc';
+import { Toggle } from '@/app/components/misc';
 import styles from './StepHeader.module.css';
 
 const StepHeader = () => {
-   const { currentStep, handleHelp } = useJourneyStore();
+   const { currentStep, handleHelp, showHelp } = useJourneyStore();
    const { heading, description } = currentStep;
 
    return (
@@ -12,7 +12,12 @@ const StepHeader = () => {
             <h2>{heading}</h2>
             <p>{description}</p>
          </div>
-         <Button onClick={handleHelp}>Help</Button>
+         <Toggle
+            isOn={showHelp}
+            offText='Show help'
+            onText='Hide help'
+            onChange={handleHelp}
+         />
       </div>
    );
 };
