@@ -1,0 +1,43 @@
+.card {
+   border: 3px solid color-mix(in oklab, var(--blue) 60%, black);
+   border-radius: 8px;
+   background-color: color-mix(in oklab, var(--background) 98%, black);
+
+   &.shadow {
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.3), 0px 5px 8px 0px rgba(0, 0, 0, 0.28),
+         0px 1px 14px 0px rgba(0, 0, 0, 0.24);
+   }
+
+   .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      border-bottom: 1px solid color-mix(in oklab, var(--blue) 60%, black);
+
+      /* .iconWrap {
+         height: 40px;
+         width: 40px;
+      } */
+
+      .textWrap {
+         flex: 1;
+         padding: 0 10px;
+         display: flex;
+         flex-direction: column;
+         gap: 6px;
+      }
+   }
+
+   .content {
+      padding: 12px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 24px;
+
+      ul {
+         list-style-position: inside;
+      }
+   }
+}

@@ -58,6 +58,10 @@ a {
    text-decoration: none;
 }
 
+main {
+   padding-top: 50.5px;
+}
+
 @media (prefers-color-scheme: dark) {
    :root {
       --background: var(--space-gray);
