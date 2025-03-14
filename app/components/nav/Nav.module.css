@@ -1,0 +1,29 @@
+.nav {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 1000;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   padding: 1rem 2rem;
+   background-color: var(--background);
+
+   ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      gap: 12px;
+
+      a {
+        color: var(--mint);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: color-mix(in oklab, var(--mint) 80%, var(--background) 20%);
+        }
+      }
+   }
+}

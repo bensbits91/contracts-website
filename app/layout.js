@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Nav } from '@/app/components/nav';
+import { Footer } from '@/app/components/footer';
 import './globals.css';
 
 const geistSans = Geist({
@@ -23,7 +25,11 @@ export default function RootLayout({ children }) {
          <Head>
             <link rel='icon' type='image/svg+xml' href='/icon.svg' sizes='any' />
          </Head>
-         <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+         <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+         </body>
       </html>
    );
 }
