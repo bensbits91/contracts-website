@@ -1,0 +1,13 @@
+.steps {
+   display: flex;
+   gap: 60px;
+
+   .step {
+      width: 550px;
+   }
+
+   .tracker {
+      margin-top: 10px;
+      width: 200px;
+   }
+}

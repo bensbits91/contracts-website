@@ -1,12 +1,18 @@
 'use client';
 import { useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
-import Form from './Form';
+import StepHeader from './StepHeader';
 import Choices from './Choices';
+import MultiChoices from './MultiChoices';
+import Form from './Form';
+import ChoiceHelp from './ChoiceHelp';
+import EndStep from './EndStep';
+
+// todo: subtle animated transition between steps
 
 const Step = () => {
-   const { currentStep, initialize } = useJourneyStore();
-   const { heading, description, form, choices } = currentStep;
+   const { currentStep, initialize, showHelp } = useJourneyStore();
+   const { form, choices, multi, moreInfo } = currentStep;
 
    useEffect(() => {
       initialize();
@@ -14,10 +20,11 @@ const Step = () => {
 
    return (
       <div>
-         <h2>{heading}</h2>
-         <p>{description}</p>
+         {currentStep.slug !== 'end' && <StepHeader />}
+         {moreInfo && showHelp && <ChoiceHelp choice={currentStep} />}
+         {choices && (multi ? <MultiChoices /> : <Choices />)}
          {form && <Form />}
-         {choices && <Choices />}
+         {currentStep.slug === 'end' && <EndStep step={currentStep} />}
       </div>
    );
 };

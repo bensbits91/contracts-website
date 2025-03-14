@@ -1,0 +1,29 @@
+.button {
+   background-color: color-mix(in oklab, var(--mint) 80%, black);
+   color: color-mix(in oklab, var(--mint) 40%, black);
+   font-size: 1rem;
+   border: 1px solid color-mix(in oklab, var(--mint) 20%, black);
+   border-radius: 5px;
+   padding: 10px;
+   cursor: pointer;
+   transition: all 0.3s;
+   width: 150px;
+
+   &:hover {
+      background-color: color-mix(in oklab, var(--mint) 80%, white);
+      color: #333;
+   }
+
+   &.selected,
+   &.selected:hover {
+      background-color: var(--lime);
+      border-color: var(--lime);
+      color: color-mix(in oklab, var(--lime) 50%, black);
+   }
+
+   &.disabled {
+      background-color: color-mix(in oklab, var(--background) 60%, white);
+      color: var(--background);
+      cursor: not-allowed;
+   }
+}

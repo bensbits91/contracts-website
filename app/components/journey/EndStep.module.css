@@ -1,0 +1,13 @@
+.step {
+   padding: 100px 0;
+   margin: 0 auto;
+   max-width: 400px;
+
+   .whatsNext {
+      margin-top: 20px;
+
+      p {
+         margin-top: 20px;
+      }
+   }
+}

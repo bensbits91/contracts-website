@@ -1,0 +1,39 @@
+.choice {
+   padding: 10px;
+   margin: 10px;
+   border: 1px solid var(--blue);
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.3s;
+
+   &:hover {
+      background-color: var(--blue);
+      color: color-mix(in oklab, var(--blue) 50%, black);
+   }
+
+   &.selected,
+   &.selected:hover {
+      background-color: var(--lime);
+      border-color: var(--lime);
+      color: color-mix(in oklab, var(--lime) 50%, black);
+   }
+
+   .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .iconWrap {
+         height: 40px;
+         width: 40px;
+      }
+
+      .textWrap {
+         flex: 1;
+         padding: 0 10px;
+         display: flex;
+         flex-direction: column;
+         gap: 6px;
+      }
+   }
+}

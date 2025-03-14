@@ -1,0 +1,82 @@
+.help {
+   color: #888;
+   font-size: 0.9em;
+   margin: 20px;
+   transition: all 0.3s;
+
+   &.hovered {
+      color: #333;
+   }
+
+   .moreInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .iconWrap {
+         height: 30px;
+         width: 30px;
+      }
+
+      .textWrap {
+         flex: 1;
+         padding: 0 10px;
+      }
+   }
+
+   .prosCons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 48px;
+
+      .head {
+         font-size: 1.2em;
+         margin-bottom: 6px;
+      }
+
+      .pros,
+      .cons {
+         list-style-position: inside;
+      }
+
+      .pros {
+         .head {
+            color: color-mix(in oklab, var(--lime) 80%, black);
+         }
+      }
+
+      .cons {
+         .head {
+            color: color-mix(in oklab, var(--pink) 90%, black);
+         }
+      }
+   }
+
+   &.hovered {
+      color: #333;
+
+      .pros {
+         .head {
+            color: color-mix(in oklab, var(--lime) 60%, black);
+         }
+      }
+
+      .cons {
+         .head {
+            color: color-mix(in oklab, var(--pink) 60%, black);
+         }
+      }
+   }
+
+   &.selected {
+      color: color-mix(in oklab, var(--lime) 70%, black);
+
+      .pros,
+      .cons {
+         .head {
+            color: color-mix(in oklab, var(--lime) 60%, black);
+         }
+      }
+   }
+}
