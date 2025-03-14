@@ -52,6 +52,17 @@ const StepTracker = () => {
 
             const needsLineBelowIndex = steps.length - 2; // account for the last step being hidden
 
+            // todo: move to string utils
+            const getTextFromAnything = anything => {
+               if (typeof anything === 'string') {
+                  return anything;
+               } else if (Array.isArray(anything)) {
+                  return anything.join(', ');
+               } else {
+                  return Object.values(anything).join(', ');
+               }
+            };
+
             return (
                <div
                   key={index}
@@ -80,7 +91,7 @@ const StepTracker = () => {
                                  styles.stepChoice,
                                  isActive && styles.activeStepChoice
                               )}>
-                              <div>{userChoice}</div>
+                              <div>{getTextFromAnything(userChoice)}</div>
                               {!isActive && (
                                  <div className={styles.stepChoiceIcon}>
                                     <PencilIcon />

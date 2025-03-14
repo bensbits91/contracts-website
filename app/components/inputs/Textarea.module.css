@@ -3,10 +3,10 @@
    flex-direction: column;
    align-items: start;
    gap: 12px;
-   /* padding-left: 24px; */
 
    .input {
       padding: 10px;
+      line-height: 1.5rem;
 
       &::placeholder {
          color: color-mix(in oklab, var(--space-gray) 50%, white);

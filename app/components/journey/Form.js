@@ -64,7 +64,7 @@ const Form = () => {
                   </Button>
                ) : field.type == 'textarea' ? (
                   <Textarea
-                     placeholder="Optional: Share anything you like. Anything that might help me understand what you're looking for."
+                     placeholder={field.placeholder}
                      name={field.name}
                      value={formData[field.name.toLowerCase()] || ''}
                      required={field.required}

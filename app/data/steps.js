@@ -294,6 +294,7 @@ const imageQs = [
       heading: 'Image Types',
       description: 'What types of images will you have?',
       nextSlug: 'image-optimization',
+      multi: true,
       choices: [
          {
             text: 'Photos',
@@ -559,7 +560,9 @@ const forms = [
       form: [
          {
             name: 'Notes',
-            type: 'textarea'
+            type: 'textarea',
+            placeholder:
+               'Optional: Any questions for me? Any details that will help me understand your needs?'
          },
          {
             name: 'Submit',

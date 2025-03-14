@@ -2,19 +2,29 @@ import { useState } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
 import ChoiceHelp from './ChoiceHelp';
 import { Heading } from '@/app/components/typography';
-import { CircleIcon, CircleCheckIcon } from '@/app/components/icons';
+import {
+   BoxCheckIcon,
+   BoxIcon,
+   CircleCheckIcon,
+   CircleIcon
+} from '@/app/components/icons';
 import styles from './Choice.module.css';
 import classNames from '@/utils/classNames';
 
-const Choice = ({ choice, isSelected, handleChoiceClick }) => {
+const Choice = ({ choice, multi = false, isSelected, handleChoiceClick }) => {
    const { showHelp } = useJourneyStore();
    const [isHovered, setIsHovered] = useState(false);
 
    const Icon = ({ isSelected }) => {
-      if (isSelected) {
-         return <CircleCheckIcon />;
-      } else {
-         return <CircleIcon />;
+      switch (true) {
+         case isSelected && multi:
+            return <BoxCheckIcon />;
+         case isSelected:
+            return <CircleCheckIcon />;
+         case multi:
+            return <BoxIcon />;
+         default:
+            return <CircleIcon />;
       }
    };
 
