@@ -1,8 +1,23 @@
 import styles from './Textarea.module.css';
 
-const Textarea = ({ name, value, onChange, required, placeholder, rows, cols }) => {
+const Textarea = ({
+   name,
+   value,
+   onChange,
+   required,
+   placeholder,
+   label = '',
+   rows,
+   cols
+}) => {
    return (
       <div className={styles.wrap}>
+         {label && (
+            <label className={styles.label}>
+               {label}
+               {required && <span>*</span>}
+            </label>
+         )}
          <textarea
             className={styles.input}
             rows={rows || '4'}

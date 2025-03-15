@@ -8,6 +8,7 @@ const Toggle = ({ isOn = false, offText = '', onText = '', onChange }) => (
          className={styles.hiddenCheckbox}
          type='checkbox'
          id='switch'
+         checked={isOn}
          onChange={onChange}
       />
       <label className={styles.label} htmlFor='switch' />

@@ -1,32 +1,28 @@
 import { useState, useEffect } from 'react';
-import useJourneyStore from '@/app/store/useJourneyStore';
 import { Button, TextInput, Textarea } from '@/app/components/inputs';
 import styles from './Form.module.css';
 
-const Form = () => {
-   const { currentStep, userInputs, handleForm } = useJourneyStore();
-   const { form, nextSlug } = currentStep;
-
+const Form = ({ fields, handleForm }) => {
    const [formData, setFormData] = useState({});
    const [isFormValid, setIsFormValid] = useState(false);
 
-   useEffect(() => {
-      // Prefill form data with userInputs when the step changes
-      if (form) {
-         const initialFormData = {};
-         form.forEach(field => {
-            const lowercaseName = field.name.toLowerCase();
-            if (lowercaseName !== 'next' && lowercaseName !== 'submit') {
-               initialFormData[lowercaseName] = userInputs[lowercaseName] || '';
-            }
-         });
-         setFormData(initialFormData);
-      }
-   }, [form, userInputs]);
+   // useEffect(() => {
+   //    // Prefill form data with userInputs when the step changes
+   //    if (fields) {
+   //       const initialFormData = {};
+   //       fields.forEach(field => {
+   //          const lowercaseName = field.name.toLowerCase();
+   //          if (lowercaseName !== 'next' && lowercaseName !== 'submit') {
+   //             initialFormData[lowercaseName] = userInputs[lowercaseName] || '';
+   //          }
+   //       });
+   //       setFormData(initialFormData);
+   //    }
+   // }, [fields, userInputs]);
 
    const handleInputChange = e => {
       const { name, value } = e.target;
-      if (name !== 'next' && name !== 'submit') {
+      if (name !== 'submit') {
          setFormData(prevData => ({
             ...prevData,
             [name.toLowerCase()]: value
@@ -35,8 +31,8 @@ const Form = () => {
    };
 
    useEffect(() => {
-      if (form) {
-         const isValid = form.every(field => {
+      if (fields) {
+         const isValid = fields.every(field => {
             if (field.required) {
                const toCheck = formData[field.name.toLowerCase()]?.trim();
                const isValid = toCheck && toCheck !== '';
@@ -46,17 +42,17 @@ const Form = () => {
          });
          setIsFormValid(isValid);
       }
-   }, [formData, form]);
+   }, [formData, fields]);
 
    const handleSubmit = e => {
       e.preventDefault();
-      handleForm({ formData, nextSlug });
-      setFormData({});
+      handleForm(formData);
+      // setFormData({});
    };
 
    return (
       <form className={styles.form} onSubmit={handleSubmit}>
-         {form.map((field, index) => (
+         {fields.map((field, index) => (
             <div key={index}>
                {field.type == 'button' || field.type == 'submit' ? (
                   <Button type='submit' disabled={!isFormValid}>
@@ -64,7 +60,8 @@ const Form = () => {
                   </Button>
                ) : field.type == 'textarea' ? (
                   <Textarea
-                     placeholder={field.placeholder || field.name}
+                     placeholder={field.placeholder}
+                     label={field.label}
                      name={field.name}
                      value={formData[field.name.toLowerCase()] || ''}
                      required={field.required}

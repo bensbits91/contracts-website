@@ -1,0 +1,31 @@
+.thanks {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 20px;
+   padding: 20px;
+
+   .iconWrap {
+      width: 100px;
+      height: 100px;
+      color: var(--green);
+   }
+
+   /* .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+   } */
+
+   .buttons {
+      display: flex;
+      gap: 20px;
+   }
+
+   .links {
+      display: flex;
+      gap: 20px;
+   }
+}

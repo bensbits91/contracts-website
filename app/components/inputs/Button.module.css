@@ -26,4 +26,11 @@
       color: var(--background);
       cursor: not-allowed;
    }
+   
+   &.clear {
+      background-color: transparent;
+      color: var(--mint);
+      border-color: transparent;
+      padding: 0;
+   }
 }
