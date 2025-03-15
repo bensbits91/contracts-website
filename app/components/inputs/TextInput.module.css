@@ -5,6 +5,7 @@
 
    .label {
       flex-basis: 50px;
+      white-space: nowrap;
    }
 
    .input {

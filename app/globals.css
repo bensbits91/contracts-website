@@ -72,3 +72,67 @@ main {
       color-scheme: dark;
    }
 }
+
+:has(.hasOverlay) {
+   overflow: hidden;
+}
+
+/* animation */
+
+.willAppearFromRight {
+   transform: translateX(100vw);
+}
+@keyframes slideLeftShow {
+   from {
+      opacity: 0;
+   }
+   to {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+@keyframes slideRightHide {
+   from {
+      transform: translateX(0);
+      opacity: 1;
+   }
+   to {
+      transform: translateX(100vw);
+      opacity: 0;
+   }
+}
+.slideLeftShow {
+   animation: slideLeftShow 150ms ease-out forwards;
+}
+.slideRightHide {
+   animation: slideRightHide 150ms ease-out forwards;
+}
+
+.willAppearFromBottom {
+   transform: translateY(100vh);
+}
+@keyframes slideUpShow {
+   from {
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+@keyframes slideDownHide {
+   from {
+      transform: translateY(0);
+      opacity: 1;
+   }
+   to {
+      transform: translateY(100vh);
+      opacity: 0;
+   }
+}
+.slideUpShow {
+   animation: slideUpShow 150ms ease-out forwards;
+}
+.slideDownHide {
+   animation: slideDownHide 150ms ease-out forwards;
+}

@@ -1,5 +1,5 @@
 .accordion {
-   .headWrap {
+   .toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -7,14 +7,19 @@
       padding: 12px;
       gap: 40px;
 
-      .textWrap {
+      /* .textWrap {
          display: flex;
          flex-direction: column;
          gap: 8px;
-      }
+      } */
 
       .toggleWrap {
          width: 210px;
+      }
+
+      .buttonWrap {
+            display: flex;
+            gap: 12px;
       }
    }
 }

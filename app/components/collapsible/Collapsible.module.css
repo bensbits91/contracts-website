@@ -19,7 +19,7 @@
          justify-content: center;
          font-weight: bold;
          margin-right: 10px;
-         transform: rotate(-90deg);
+         transform: rotate(90deg);
          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
    }
@@ -43,7 +43,7 @@
       }
 
       .iconWrap {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
      }
    }
 }
