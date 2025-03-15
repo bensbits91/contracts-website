@@ -6,7 +6,7 @@ import { faq } from '@/app/data/faq';
 const FAQ = () => {
    return (
       <>
-         <Section>
+         <Section bottom='sm'>
             <Heading level='1'>FAQ</Heading>
          </Section>
          <Section height='sm'>

@@ -1,21 +1,24 @@
 import styles from './Section.module.css';
 import classNames from '@/utils/classNames';
 
-const Section = ({ children, width = 'm', height = 'm', bg = '' }) => {
+const Section = ({
+   children,
+   width = 'md',
+   height = 'md',
+   top = 'md',
+   bottom = 'md',
+   bg = ''
+}) => {
    return (
       <div
          className={classNames(
             styles.section,
-            height === 'sm' && styles.h_sm,
-            height === 'lg' && styles.h_lg,
+            styles[`h_${height}`],
+            styles[`t_${top}`],
+            styles[`b_${bottom}`],
             bg === 'pop' && styles.bg_pop
          )}>
-         <div
-            className={classNames(
-               styles.content,
-               width === 'sm' && styles.w_sm,
-               width === 'lg' && styles.w_lg
-            )}>
+         <div className={classNames(styles.content, styles[`w_${width}`])}>
             {children}
          </div>
       </div>
