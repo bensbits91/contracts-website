@@ -1,4 +1,5 @@
 import { Section } from '@/app/components/layout';
+import { Heading } from '@/app/components/typography';
 import { Card } from '@/app/components/card';
 import { why } from '@/app/data/why';
 import styles from './page.module.css';
@@ -7,7 +8,7 @@ const Why = () => {
    return (
       <>
          <Section>
-            <h1>Why choose Ben?</h1>
+            <Heading level='1'>Why choose Ben?</Heading>
          </Section>
          <Section height='sm'>
             <div className={styles.grid}>

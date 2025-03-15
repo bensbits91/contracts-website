@@ -1,6 +1,14 @@
 import styles from './TextInput.module.css';
 
-const TextInput = ({ label, type, name, value, required, placeholder, onChange }) => (
+const TextInput = ({
+   label,
+   type,
+   name,
+   value,
+   required = false,
+   placeholder,
+   onChange
+}) => (
    <div className={styles.inputWrap}>
       <label className={styles.label}>
          {label}
@@ -12,7 +20,7 @@ const TextInput = ({ label, type, name, value, required, placeholder, onChange }
          name={name}
          value={value}
          required={required}
-         placeholder={placeholder || required ? 'Required' : ''}
+         placeholder={placeholder || (required ? 'Required' : '')}
          onChange={onChange}
       />
    </div>
