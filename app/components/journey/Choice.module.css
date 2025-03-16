@@ -1,21 +1,21 @@
 .choice {
    padding: 10px;
    margin: 10px;
-   border: 1px solid var(--blue);
+   border: 1px solid var(--border);
    border-radius: 5px;
    cursor: pointer;
    transition: all 0.3s;
 
    &:hover {
-      background-color: var(--blue);
-      color: color-mix(in oklab, var(--blue) 50%, black);
+      background-color: var(--clickable-div-hover-bg);
+      color: color-mix(in oklab, var(--clickable-div-hover-text) 50%, black);
    }
 
    &.selected,
    &.selected:hover {
-      background-color: var(--lime);
-      border-color: var(--lime);
-      color: color-mix(in oklab, var(--lime) 50%, black);
+      background-color: var(--clickable-div-selected-bg);
+      border-color: var(--border-selected);
+      color: var(--clickable-div-selected-text);
    }
 
    .content {

@@ -1,5 +1,4 @@
 'use client';
-import { useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
 import StepHeader from './StepHeader';
 import Choices from './Choices';
@@ -13,10 +12,6 @@ import EndStep from './EndStep';
 const Step = () => {
    const { currentStep, initialize, showHelp } = useJourneyStore();
    const { form, choices, multi, moreInfo } = currentStep;
-
-   useEffect(() => {
-      initialize();
-   }, []);
 
    return (
       <div>

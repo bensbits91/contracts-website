@@ -1,8 +1,8 @@
 .button {
-   background-color: color-mix(in oklab, var(--mint) 80%, black);
-   color: color-mix(in oklab, var(--mint) 40%, black);
+   background-color: var(--button-bg);
+   color: var(--button-text);
    font-size: 1rem;
-   border: 1px solid color-mix(in oklab, var(--mint) 20%, black);
+   border: 1px solid var(--button-border);
    border-radius: 5px;
    padding: 10px;
    cursor: pointer;
@@ -10,27 +10,31 @@
    width: 150px;
 
    &:hover {
-      background-color: color-mix(in oklab, var(--mint) 80%, white);
-      color: #333;
+      background-color: var(--button-hover-bg);
+      color: var(--button-hover-text);
    }
 
    &.selected,
    &.selected:hover {
-      background-color: var(--lime);
-      border-color: var(--lime);
-      color: color-mix(in oklab, var(--lime) 50%, black);
+      background-color: var(--button-selected-bg);
+      border-color: var(--button-selected-border);
+      color: var(--button-selected-text);
    }
 
    &.disabled {
-      background-color: color-mix(in oklab, var(--background) 60%, white);
-      color: var(--background);
+      background-color: var(--button-disabled-bg);
+      color: var(--button-disabled-text);
       cursor: not-allowed;
    }
-   
+
    &.clear {
-      background-color: transparent;
-      color: var(--mint);
-      border-color: transparent;
+      background-color: var(--button-clear-bg);
+      color: var(--button-clear-text);
+      border-color: var(--button-clear-border);
       padding: 0;
+
+      &:hover {
+         color: var(--button-clear-hover-text);
+      }   
    }
 }

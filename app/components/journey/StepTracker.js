@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
 import {
    CircleIcon,
@@ -11,7 +12,12 @@ import styles from './StepTracker.module.css';
 import classNames from '@/utils/classNames';
 
 const StepTracker = () => {
-   const { currentStep, userChoices, userInputs, handleNavigate } = useJourneyStore();
+   const { initialize, currentStep, userChoices, userInputs, handleNavigate } =
+      useJourneyStore();
+
+   useEffect(() => {
+      initialize();
+   }, []);
 
    return (
       <div className={styles.stepTracker}>

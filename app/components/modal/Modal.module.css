@@ -1,5 +1,5 @@
 .modal {
-   background-color: color-mix(in oklab, var(--background) 95%, white);
+   background-color: var(--modal-bg);
    position: fixed;
    top: 40px;
    left: 40px;

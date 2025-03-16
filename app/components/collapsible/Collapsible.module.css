@@ -1,5 +1,5 @@
 .collapsible {
-   border: 1px solid var(--blue);
+   border: 1px solid var(--border);
    border-radius: 4px;
    margin-bottom: 16px;
    cursor: pointer;
@@ -13,7 +13,7 @@
       .iconWrap {
          width: 35px;
          height: 35px;
-         color: var(--blue);
+         color: var(--icon);
          display: flex;
          align-items: center;
          justify-content: center;
@@ -43,7 +43,7 @@
       }
 
       .iconWrap {
-        transform: rotate(-90deg);
-     }
+         transform: rotate(-90deg);
+      }
    }
 }

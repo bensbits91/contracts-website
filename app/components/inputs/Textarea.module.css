@@ -7,9 +7,12 @@
    .input {
       padding: 10px;
       line-height: 1.5rem;
+      background-color: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
 
       &::placeholder {
-         color: color-mix(in oklab, var(--space-gray) 50%, white);
+         color: var(--input-placeholder);
       }
    }
 }

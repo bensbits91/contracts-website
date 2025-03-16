@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
          <Head>
             <link rel='icon' type='image/svg+xml' href='/icon.svg' sizes='any' />
          </Head>
-         <body className={`${geistSans.variable} ${geistMono.variable}`}>
+         <body className={`${geistSans.variable} ${geistMono.variable} theme-storm`}>
             <Nav />
             <main>{children}</main>
             <Footer />

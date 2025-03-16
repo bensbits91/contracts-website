@@ -8,7 +8,8 @@
    justify-content: flex-end;
    align-items: center;
    padding: 1rem 2rem;
-   background-color: var(--background);
+   background-color: var(--nav-bg);
+   border-bottom: 1px solid var(--border-subtle);
 
    ul {
       display: flex;
@@ -18,12 +19,12 @@
       gap: 12px;
 
       a {
-        color: var(--mint);
-        transition: color 0.3s ease;
+         color: var(--nav-text);
+         transition: color 0.3s ease;
 
-        &:hover {
-          color: color-mix(in oklab, var(--mint) 80%, var(--background) 20%);
-        }
+         &:hover {
+            color: var(--nav-hover-text);
+         }
       }
    }
 }

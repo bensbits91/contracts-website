@@ -18,7 +18,7 @@
       height: 27px; /* account for border width */
       display: block;
       border-radius: 100px;
-      border: 1px solid var(--white);
+      border: 1px solid var(--border);
       position: relative;
    }
 
@@ -29,17 +29,17 @@
       left: 2.5px;
       width: 20px;
       height: 20px;
-      background: var(--white);
+      background: var(--toggle-switch-bg);
       border-radius: 45px;
       transition: 0.3s;
    }
 
    .hiddenCheckbox:checked + .label {
-      background: var(--blue);
+      background: var(--toggle-checked-bg);
    }
 
    .hiddenCheckbox:checked + .label:after {
-      background: color-mix(in oklab, var(--blue) 50%, black);
+      background: var(--toggle-checked-switch-bg);
 
       left: calc(100% - 2.5px);
       transform: translateX(-100%);
