@@ -18,8 +18,8 @@
          .stepIcon {
             width: 35px;
             height: 35px;
-            background-color: var(--background);
-            color: color-mix(in oklab, var(--space-gray) 50%, white);
+            background-color: var(--tracker-step-icon-bg);
+            color: var(--tracker-step-icon);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,11 +27,11 @@
             margin-right: 10px;
 
             &.active {
-               color: var(--blue);
+               color: var(--tracker-step-active-icon);
             }
 
             &.completed {
-               color: var(--lime);
+               color: var(--tracker-step-completed-icon);
             }
          }
 
@@ -41,34 +41,34 @@
             }
 
             .stepText {
-               color: color-mix(in oklab, var(--space-gray) 50%, white);
+               color: var(--tracker-step-text);
                font-size: 16px;
 
                &.activeStepText {
-                  color: var(--blue);
+                  color: var(--tracker-active-step-text);
                }
             }
 
             .stepChoice {
                display: flex;
                align-items: center;
-               color: color-mix(in oklab, var(--lime) 40%, white);
+               color: var(--tracker-choice-text);
 
                .stepChoiceIcon {
-                  color: color-mix(in oklab, var(--space-gray) 50%, white);
+                  color: var(--tracker-choice-icon);
                   width: 24px;
                   height: 24px;
                   margin-left: 4px;
                }
 
                &.activeStepChoice {
-                  color: color-mix(in oklab, var(--blue) 40%, white);
+                  color: var(--tracker-active-choice-text);
                }
             }
 
             &:hover {
                * {
-                  color: var(--yellow);
+                  color: var(--tracker-hover-text);
                }
             }
          }
@@ -94,7 +94,7 @@
 
          .stepTextWrap:hover {
             * {
-               color: color-mix(in oklab, var(--space-gray) 50%, white);
+               color: var(--tracker-step-text);
             }
          }
       }

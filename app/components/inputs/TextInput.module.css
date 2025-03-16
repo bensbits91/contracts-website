@@ -12,12 +12,12 @@
       height: 30px;
       flex-basis: 300px;
       padding: 6px;
-      background-color: light-dark(#e8f0fe, #465a7e66);
-      border: 1px solid var(--blue);
+      background-color: var(--input-bg);
+      border: 1px solid var(--border);
       border-radius: 3px;
 
       &::placeholder {
-         color: color-mix(in oklab, var(--space-gray) 50%, white);
+         color: var(--input-placeholder);
       }
    }
 }

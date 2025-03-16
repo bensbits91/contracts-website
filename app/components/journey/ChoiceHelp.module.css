@@ -1,11 +1,11 @@
 .help {
-   color: #888;
+   color: var(--text-subtle);
    font-size: 0.9em;
    margin: 20px;
    transition: all 0.3s;
 
    &.hovered {
-      color: #333;
+      color: var(--foreground);
    }
 
    .moreInfo {
@@ -37,18 +37,20 @@
 
       .pros,
       .cons {
-         list-style-position: inside;
+         ul {
+            padding-left: 18px;
+         }
       }
 
       .pros {
          .head {
-            color: color-mix(in oklab, var(--lime) 80%, black);
+            color: color-mix(in oklab, var(--pro-text) 80%, black);
          }
       }
 
       .cons {
          .head {
-            color: color-mix(in oklab, var(--pink) 90%, black);
+            color: color-mix(in oklab, var(--con-text) 90%, black);
          }
       }
    }
@@ -58,24 +60,24 @@
 
       .pros {
          .head {
-            color: color-mix(in oklab, var(--lime) 60%, black);
+            color: var(--pro-head);
          }
       }
 
       .cons {
          .head {
-            color: color-mix(in oklab, var(--pink) 60%, black);
+            color: var(--con-head);
          }
       }
    }
 
    &.selected {
-      color: color-mix(in oklab, var(--lime) 70%, black);
+      color: var(--clickable-div-selected-text);
 
       .pros,
       .cons {
          .head {
-            color: color-mix(in oklab, var(--lime) 60%, black);
+            color: var(--clickable-div-selected-text);
          }
       }
    }

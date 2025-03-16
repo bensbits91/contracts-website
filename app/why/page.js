@@ -7,7 +7,7 @@ import styles from './page.module.css';
 const Why = () => {
    return (
       <>
-         <Section>
+         <Section bottom='sm'>
             <Heading level='1'>Why choose Ben?</Heading>
          </Section>
          <Section height='sm'>

@@ -33,6 +33,89 @@
    --foreground: #171717;
 }
 
+/* theme colors */
+/* theme colors */
+/* theme colors */
+/* theme colors */
+/* theme colors */
+/* theme colors */
+/* theme colors */
+.theme-storm {
+   --background: var(--space-gray);
+   --foreground: color-mix(in oklab, var(--background) 15%, white);
+
+   --main: var(--blue);
+   --link: var(--mint);
+   --link-hover: color-mix(in oklab, var(--link) 80%, white);
+   --link-hover-brighter: color-mix(in oklab, var(--link) 60%, white);
+   --yes: var(--lime);
+   --no: var(--pink);
+   --maybe: var(--yellow);
+
+   --text-subtle: color-mix(in oklab, var(--background) 50%, white);
+
+   --border: var(--main);
+   --border-selected: var(--yes);
+   --border-subtle: color-mix(in oklab, var(--background) 90%, white);
+
+   --nav-bg: var(--background);
+   --nav-text: var(--link);
+   --nav-hover-text: var(--link-hover-brighter);
+
+   --icon: var(--main);
+   --icon-selected: var(--yes);
+
+   --clickable-div-bg: var(--background);
+   --clickable-div-hover-bg: var(--main);
+   --clickable-div-hover-text: var(--main);
+   --clickable-div-selected-bg: var(--yes);
+   --clickable-div-selected-text: color-mix(in oklab, var(--yes) 50%, black);
+
+   --pro-text: var(--yes);
+   --pro-head: color-mix(in oklab, var(--pro-text) 60%, black);
+   --con-text: var(--no);
+   --con-head: color-mix(in oklab, var(--con-text) 60%, black);
+
+   --button-bg: color-mix(in oklab, var(--link) 80%, black);
+   --button-text: color-mix(in oklab, var(--link) 40%, black);
+   --button-border: color-mix(in oklab, var(--link) 20%, black);
+   --button-hover-bg: var(--link-hover);
+   --button-hover-text: color-mix(in oklab, var(--link) 40%, black);
+   --button-selected-bg: var(--yes);
+   --button-selected-border: var(--yes);
+   --button-selected-text: color-mix(in oklab, var(--yes) 50%, black);
+   --button-disabled-bg: color-mix(in oklab, var(--background) 60%, white);
+   --button-disabled-text: var(--background);
+   --button-clear-bg: transparent;
+   --button-clear-text: var(--link);
+   --button-clear-hover-text: var(--link-hover-brighter);
+   --button-clear-border: transparent;
+
+   --input-bg: color-mix(in oklab, var(--background) 99%, black);
+   --input-placeholder: color-mix(in oklab, var(--background) 50%, white);
+
+   --toggle-switch-bg: var(--main);
+   --toggle-checked-bg: var(--main);
+   --toggle-checked-switch-bg: color-mix(in oklab, var(--main) 50%, black);
+
+   --modal-bg: color-mix(in oklab, var(--background) 98%, white);
+
+   /* --tracker-text: var(--text-subtle); */
+   --tracker-step-icon-bg: var(--background);
+   --tracker-step-icon: var(--text-subtle);
+   --tracker-step-text: color-mix(in oklab, var(--background) 50%, white);
+   --tracker-choice-text: color-mix(in oklab, var(--yes) 40%, white);
+   --tracker-choice-icon: color-mix(in oklab, var(--background) 50%, white);
+   --tracker-step-active-icon: var(--main);
+   --tracker-active-step-text: var(--main);
+   --tracker-active-choice-text: color-mix(in oklab, var(--main) 40%, white);
+   --tracker-step-completed-icon: var(--yes);
+   --tracker-hover-text: var(--maybe);
+
+   --shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.3), 0px 5px 8px 0px rgba(0, 0, 0, 0.28),
+      0px 1px 14px 0px rgba(0, 0, 0, 0.24);
+}
+
 html,
 body {
    max-width: 100vw;
@@ -77,6 +160,13 @@ main {
    overflow: hidden;
 }
 
+/* animation */
+/* animation */
+/* animation */
+/* animation */
+/* animation */
+/* animation */
+/* animation */
 /* animation */
 
 .willAppearFromRight {

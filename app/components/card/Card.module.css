@@ -1,11 +1,10 @@
 .card {
-   border: 3px solid color-mix(in oklab, var(--blue) 60%, black);
+   border: 2px solid color-mix(in oklab, var(--border) 60%, black);
    border-radius: 8px;
    background-color: color-mix(in oklab, var(--background) 98%, black);
 
    &.shadow {
-      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.3), 0px 5px 8px 0px rgba(0, 0, 0, 0.28),
-         0px 1px 14px 0px rgba(0, 0, 0, 0.24);
+      box-shadow: var(--shadow);
    }
 
    .header {
@@ -13,7 +12,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 24px;
-      border-bottom: 1px solid color-mix(in oklab, var(--blue) 60%, black);
+      border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, black);
 
       /* .iconWrap {
          height: 40px;
@@ -37,7 +36,7 @@
       padding: 24px;
 
       ul {
-         list-style-position: inside;
+         padding-left: 24px;
       }
    }
 }
