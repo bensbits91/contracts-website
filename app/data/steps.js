@@ -135,17 +135,17 @@ const designQs = [
       nextSlug: 'content-storage',
       choices: [
          {
-            text: 'Ben',
-            description:
-               "I'm better than bad at design, and including my design services in your project is probably less expensive than hiring a separate designer."
-         },
-         {
             text: 'Me',
             description: "I'll provide the designs to Ben."
          },
          {
             text: 'My designer',
             description: "I'll work with a designer to provide designs to Ben."
+         },
+         {
+            text: 'Ben',
+            description:
+               "Ben is better at design than the average bear, and including Ben's design services is probably less expensive than hiring a separate designer."
          },
          {
             text: "Ben's designer",
@@ -199,6 +199,7 @@ const contentQs = [
       heading: 'Content Editors',
       description: 'Who will update content?',
       nextSlug: 'page-count',
+      multi: true,
       choices: [
          {
             text: 'Me',
@@ -217,10 +218,6 @@ const contentQs = [
             text: "Ben's content author",
             description:
                'Ben has a few prefered authors. Ben will manage the relationship. We can select an author based on the details of the project.'
-         },
-         {
-            text: 'Multiple authors',
-            description: 'Some combination of the above.'
          }
       ]
    }
@@ -484,7 +481,8 @@ const userQs = [
          },
          {
             text: 'No',
-            description: 'asdf.'
+            description: 'asdf.',
+            nextSlug: 'contact'
          }
       ]
    },

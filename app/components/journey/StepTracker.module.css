@@ -27,7 +27,7 @@
             margin-right: 10px;
 
             &.active {
-               color: var(--tracker-step-active-icon);
+               color: var(--tracker-active-step-icon);
             }
 
             &.completed {

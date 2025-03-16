@@ -45,14 +45,17 @@
    --foreground: color-mix(in oklab, var(--background) 15%, white);
 
    --main: var(--blue);
-   --link: var(--mint);
-   --link-hover: color-mix(in oklab, var(--link) 80%, white);
-   --link-hover-brighter: color-mix(in oklab, var(--link) 60%, white);
    --yes: var(--lime);
    --no: var(--pink);
    --maybe: var(--yellow);
 
+   --link: var(--mint);
+
+   --link-hover: color-mix(in oklab, var(--link) 80%, white);
+   --link-hover-brighter: color-mix(in oklab, var(--link) 60%, white);
+
    --text-subtle: color-mix(in oklab, var(--background) 50%, white);
+   --text-selected: color-mix(in oklab, var(--yes) 50%, black);
 
    --border: var(--main);
    --border-selected: var(--yes);
@@ -69,7 +72,7 @@
    --clickable-div-hover-bg: var(--main);
    --clickable-div-hover-text: var(--main);
    --clickable-div-selected-bg: var(--yes);
-   --clickable-div-selected-text: color-mix(in oklab, var(--yes) 50%, black);
+   --clickable-div-selected-text: var(--text-selected);
 
    --pro-text: var(--yes);
    --pro-head: color-mix(in oklab, var(--pro-text) 60%, black);
@@ -83,7 +86,7 @@
    --button-hover-text: color-mix(in oklab, var(--link) 40%, black);
    --button-selected-bg: var(--yes);
    --button-selected-border: var(--yes);
-   --button-selected-text: color-mix(in oklab, var(--yes) 50%, black);
+   --button-selected-text: var(--text-selected);
    --button-disabled-bg: color-mix(in oklab, var(--background) 60%, white);
    --button-disabled-text: var(--background);
    --button-clear-bg: transparent;
@@ -92,7 +95,7 @@
    --button-clear-border: transparent;
 
    --input-bg: color-mix(in oklab, var(--background) 99%, black);
-   --input-placeholder: color-mix(in oklab, var(--background) 50%, white);
+   --input-placeholder: var(--text-subtle);
 
    --toggle-switch-bg: var(--main);
    --toggle-checked-bg: var(--main);
@@ -103,10 +106,10 @@
    /* --tracker-text: var(--text-subtle); */
    --tracker-step-icon-bg: var(--background);
    --tracker-step-icon: var(--text-subtle);
-   --tracker-step-text: color-mix(in oklab, var(--background) 50%, white);
+   --tracker-step-text: var(--text-subtle);
    --tracker-choice-text: color-mix(in oklab, var(--yes) 40%, white);
-   --tracker-choice-icon: color-mix(in oklab, var(--background) 50%, white);
-   --tracker-step-active-icon: var(--main);
+   --tracker-choice-icon: var(--text-subtle);
+   --tracker-active-step-icon: var(--main);
    --tracker-active-step-text: var(--main);
    --tracker-active-choice-text: color-mix(in oklab, var(--main) 40%, white);
    --tracker-step-completed-icon: var(--yes);
