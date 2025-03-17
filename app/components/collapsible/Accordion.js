@@ -78,23 +78,25 @@ const Accordion = ({ collapsibleItems }) => {
                {/* <div className={styles.textWrap}>
                <p>Some frequently asked questions :)</p>
             </div> */}
-               <div className={styles.searchWrap}>
-                  <TextInput
-                     label='Search'
-                     type='search'
-                     name='search'
-                     required={false}
-                     placeholder='Search'
-                     onChange={handleSearch}
-                  />
-               </div>
-               <div className={styles.toggleWrap}>
-                  <Toggle
-                     isOn={allOpen}
-                     offText='Open all'
-                     onText='Close all'
-                     onChange={toggleAll}
-                  />
+               <div className={styles.controls}>
+                  <div className={styles.searchWrap}>
+                     <TextInput
+                        label='Search'
+                        type='search'
+                        name='search'
+                        required={false}
+                        placeholder='Search'
+                        onChange={handleSearch}
+                     />
+                  </div>
+                  <div className={styles.toggleWrap}>
+                     <Toggle
+                        isOn={allOpen}
+                        offText='Open all'
+                        onText='Close all'
+                        onChange={toggleAll}
+                     />
+                  </div>
                </div>
                <div className={styles.buttonWrap}>
                   <Button

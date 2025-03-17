@@ -97,7 +97,7 @@ const Modal = ({
                      /> */}
                      </div>
                   )}
-                  <div>{children}</div>
+                  <div className={styles.main}>{children}</div>
                </div>
             </div>
          </div>

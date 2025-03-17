@@ -18,7 +18,7 @@
          .stepIcon {
             width: 35px;
             height: 35px;
-            background-color: var(--tracker-step-icon-bg);
+            background-color: var(--tracker-mobile-bg);
             color: var(--tracker-step-icon);
             display: flex;
             align-items: center;
@@ -32,6 +32,10 @@
 
             &.completed {
                color: var(--tracker-step-completed-icon);
+            }
+
+            @media (min-width: 640px) {
+               background-color: var(--background);
             }
          }
 
@@ -66,9 +70,11 @@
                }
             }
 
-            &:hover {
-               * {
-                  color: var(--tracker-hover-text);
+            @media (min-width: 800px) {
+               &:hover {
+                  * {
+                     color: var(--tracker-hover-text);
+                  }
                }
             }
          }
@@ -92,9 +98,11 @@
       &.disabled {
          cursor: not-allowed;
 
-         .stepTextWrap:hover {
-            * {
-               color: var(--tracker-step-text);
+         @media (min-width: 800px) {
+            .stepTextWrap:hover {
+               * {
+                  color: var(--tracker-step-text);
+               }
             }
          }
       }

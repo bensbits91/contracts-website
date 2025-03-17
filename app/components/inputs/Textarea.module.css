@@ -10,6 +10,7 @@
       background-color: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 4px;
+      width: 100%;
 
       &::placeholder {
          color: var(--input-placeholder);

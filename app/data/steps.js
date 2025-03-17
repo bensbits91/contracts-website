@@ -87,6 +87,7 @@ const designQs = [
       heading: 'Design Type',
       description: 'What type of design do you need?',
       nextSlug: 'design-vision',
+      multi: true,
       choices: [
          {
             text: 'UI/UX',
@@ -94,10 +95,6 @@ const designQs = [
          },
          {
             text: 'Branding',
-            description: 'asdf.'
-         },
-         {
-            text: 'Both',
             description: 'asdf.'
          }
       ]
@@ -447,6 +444,7 @@ const cachingQs = [
       heading: 'Caching Location',
       description: 'Where should we cache data?',
       nextSlug: 'user-accounts',
+      multi: true,
       choices: [
          {
             text: 'CDN',
@@ -458,10 +456,6 @@ const cachingQs = [
          },
          {
             text: 'Client-side',
-            description: 'asdf.'
-         },
-         {
-            text: 'Combination',
             description: 'asdf.'
          }
       ]
