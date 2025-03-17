@@ -1,7 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { Section } from '@/app/components/layout';
-import { Heading } from '@/app/components/typography';
 import { Form } from '@/app/components/form';
 import { Thanks } from '@/app/components/thanks';
 
@@ -43,7 +41,7 @@ const ContactPage = () => {
          content="I'll get back to you ASAP"
          links={[
             { text: 'Have a project in mind?', href: '/journey' },
-            { text: 'Any questions?', href: '/faq' },
+            { text: 'Any questions?', href: '/faq' }
          ]}
       />
    ) : (
