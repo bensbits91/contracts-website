@@ -24,7 +24,9 @@ const Thanks = ({ heading, content, buttons, links }) => {
          {links && (
             <div className={styles.links}>
                {links.map((link, index) => (
-                  <Link key={index} {...link} />
+                  <Link key={index} href={link.href}>
+                     {link.text}
+                  </Link>
                ))}
             </div>
          )}

@@ -1,7 +1,7 @@
 import styles from './Heading.module.css';
 import classNames from '@/utils/classNames';
 
-const Heading = ({ children, level, color, top = 'no', bottom = 'sm' }) => {
+const Heading = ({ children, level = '2', color, top = 'no', bottom = 'sm' }) => {
    const Tag = `h${level}`;
 
    const H = (
