@@ -87,6 +87,7 @@ const designQs = [
       heading: 'Design Type',
       description: 'What type of design do you need?',
       nextSlug: 'design-vision',
+      multi: true,
       choices: [
          {
             text: 'UI/UX',
@@ -94,10 +95,6 @@ const designQs = [
          },
          {
             text: 'Branding',
-            description: 'asdf.'
-         },
-         {
-            text: 'Both',
             description: 'asdf.'
          }
       ]

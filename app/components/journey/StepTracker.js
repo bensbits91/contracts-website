@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
 import {
    CircleIcon,
@@ -18,6 +18,17 @@ const StepTracker = () => {
    useEffect(() => {
       initialize();
    }, []);
+
+   const stepRefs = useRef([]);
+   useEffect(() => {
+      const currentIndex = steps.indexOf(currentStep);
+      if (stepRefs.current[currentIndex]) {
+         stepRefs.current[currentIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+         });
+      }
+   }, [currentStep]);
 
    return (
       <div className={styles.stepTracker}>
@@ -72,6 +83,7 @@ const StepTracker = () => {
             return (
                <div
                   key={index}
+                  ref={el => (stepRefs.current[index] = el)}
                   className={classNames(styles.step, isDisabled && styles.disabled)}
                   onClick={isDisabled ? null : () => handleNavigate(step)}>
                   <div className={styles.stepContent}>
