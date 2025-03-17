@@ -1,5 +1,8 @@
 .section {
-   padding: 60px 0;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 20px;
+   padding-bottom: 20px;
 
    &.bg_pop {
       background-color: #222;
@@ -7,22 +10,22 @@
 
    &.h_sm,
    &.t_sm {
-      padding-top: 30px;
-   }
-
-   &.h_lg,
-   &.t_lg {
-      padding-top: 90px;
+      padding-top: 10px;
    }
 
    &.h_sm,
    &.b_sm {
-      padding-bottom: 30px;
+      padding-bottom: 10px;
+   }
+
+   &.h_lg,
+   &.t_lg {
+      padding-top: 40px;
    }
 
    &.h_lg,
    &.b_lg {
-      padding-bottom: 90px;
+      padding-bottom: 40px;
    }
 
    .content {
@@ -35,6 +38,33 @@
 
       &.w_sm {
          max-width: 600px;
+      }
+   }
+
+   @media (min-width: 860px) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      &.h_sm,
+      &.t_sm {
+         padding-top: 30px;
+      }
+
+      &.h_sm,
+      &.b_sm {
+         padding-bottom: 30px;
+      }
+
+      &.h_lg,
+      &.t_lg {
+         padding-top: 90px;
+      }
+
+      &.h_lg,
+      &.b_lg {
+         padding-bottom: 90px;
       }
    }
 }
