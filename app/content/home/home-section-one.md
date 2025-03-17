@@ -1,4 +1,6 @@
-## Heading Two
+{"bottom": "sm", "color": "blue"}
+Heading Two Is Blue
+----
 
 This is some normal text
 
@@ -6,3 +8,8 @@ This is some normal text
 - is
 - a
 - list
+
+1. this
+2. list
+3. is
+4. ordered

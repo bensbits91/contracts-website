@@ -1,3 +1,4 @@
 # Let's build a cool website
 
-This should be a subheading
+{"variant":"subtle", "top":"lg"}
+This should be a subtle text with a big top margin

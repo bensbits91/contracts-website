@@ -16,7 +16,7 @@ const Section = ({
             styles[`h_${height}`],
             styles[`t_${top}`],
             styles[`b_${bottom}`],
-            bg === 'pop' && styles.bg_pop
+            styles[`bg_${bg}`]
          )}>
          <div className={classNames(styles.content, styles[`w_${width}`])}>
             {children}
