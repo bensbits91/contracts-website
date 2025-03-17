@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Nav } from '@/app/components/nav';
+import { ResponsiveNav } from '@/app/components/nav';
 import { Footer } from '@/app/components/footer';
 import './globals.css';
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
             <link rel='icon' type='image/svg+xml' href='/icon.svg' sizes='any' />
          </Head>
          <body className={`${geistSans.variable} ${geistMono.variable} theme-storm`}>
-            <Nav />
+            <ResponsiveNav />
             <main>{children}</main>
             <Footer />
          </body>

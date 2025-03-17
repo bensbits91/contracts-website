@@ -5,5 +5,6 @@ export { default as BoxCheckIcon } from './BoxCheckIcon';
 export { default as BoxIcon } from './BoxIcon';
 export { default as PencilIcon } from './PencilIcon';
 export { default as QuestionIcon } from './QuestionIcon';
+export { default as MobileNavIcon } from './MobileNavIcon';
 export { default as CloseIcon } from './CloseIcon';
 export { default as NoImageIcon } from './NoImageIcon';

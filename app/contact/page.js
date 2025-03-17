@@ -4,10 +4,10 @@ import { ContactForm } from '@/app/components/contact';
 
 const ContactPage = () => (
    <>
-      <Section bottom='sm'>
+      <Section bottom='sm' width='sm'>
          <Heading level={1}>Contact Me</Heading>
       </Section>
-      <Section top='sm'>
+      <Section top='sm' width='sm'>
          <ContactForm />
       </Section>
    </>
