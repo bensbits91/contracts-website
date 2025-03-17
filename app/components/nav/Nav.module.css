@@ -22,8 +22,10 @@
          color: var(--nav-text);
          transition: color 0.3s ease;
 
-         &:hover {
-            color: var(--nav-hover-text);
+         @media (min-width: 800px) {
+            &:hover {
+               color: var(--nav-hover-text);
+            }
          }
       }
    }

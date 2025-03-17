@@ -70,7 +70,7 @@
 
    --clickable-div-bg: var(--background);
    --clickable-div-hover-bg: var(--main);
-   --clickable-div-hover-text: var(--main);
+   --clickable-div-hover-text: color-mix(in oklab, var(--clickable-div-hover-bg) 50%, black);
    --clickable-div-selected-bg: var(--yes);
    --clickable-div-selected-text: var(--text-selected);
 
@@ -104,7 +104,7 @@
    --modal-bg: color-mix(in oklab, var(--background) 98%, white);
 
    /* --tracker-text: var(--text-subtle); */
-   --tracker-step-icon-bg: var(--background);
+   /* --tracker-step-icon-bg: var(--background); */
    --tracker-step-icon: var(--text-subtle);
    --tracker-step-text: var(--text-subtle);
    --tracker-choice-text: color-mix(in oklab, var(--yes) 40%, white);
@@ -114,6 +114,7 @@
    --tracker-active-choice-text: color-mix(in oklab, var(--main) 40%, white);
    --tracker-step-completed-icon: var(--yes);
    --tracker-hover-text: var(--maybe);
+   --tracker-mobile-bg: color-mix(in oklab, var(--background) 90%, white);
 
    --shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.3), 0px 5px 8px 0px rgba(0, 0, 0, 0.28),
       0px 1px 14px 0px rgba(0, 0, 0, 0.24);

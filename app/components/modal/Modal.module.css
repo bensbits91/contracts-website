@@ -1,11 +1,11 @@
 .modal {
    background-color: var(--modal-bg);
    position: fixed;
-   top: 40px;
-   left: 40px;
-   right: 40px;
-   bottom: 40px;
-   padding: 40px;
+   top: 30px;
+   left: 30px;
+   right: 30px;
+   bottom: 30px;
+   padding: 20px;
    overflow: auto;
    border-radius: 0.5rem;
    z-index: 1001;
@@ -17,6 +17,10 @@
          width: 100%;
          display: flex;
          gap: 2.5rem;
+
+         .main {
+            width: 100%;
+         }
       }
    }
 
@@ -24,5 +28,13 @@
       display: flex;
       justify-content: flex-end;
       margin-top: 20px;
+   }
+
+   @media (min-width: 800px) {
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      bottom: 40px;
+      padding: 40px;
    }
 }

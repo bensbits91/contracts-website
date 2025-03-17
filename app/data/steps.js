@@ -447,6 +447,7 @@ const cachingQs = [
       heading: 'Caching Location',
       description: 'Where should we cache data?',
       nextSlug: 'user-accounts',
+      multi: true,
       choices: [
          {
             text: 'CDN',
@@ -458,10 +459,6 @@ const cachingQs = [
          },
          {
             text: 'Client-side',
-            description: 'asdf.'
-         },
-         {
-            text: 'Combination',
             description: 'asdf.'
          }
       ]

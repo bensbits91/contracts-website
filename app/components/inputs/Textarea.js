@@ -21,7 +21,7 @@ const Textarea = ({
          <textarea
             className={styles.input}
             rows={rows || '4'}
-            cols={cols || '50'}
+            // cols={cols || '50'}
             placeholder={placeholder}
             name={name}
             value={value}
