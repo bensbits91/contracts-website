@@ -1,0 +1,54 @@
+'use client';
+import { useState } from 'react';
+import { Section } from '@/app/components/layout';
+import { Heading } from '@/app/components/typography';
+import { Form } from '@/app/components/form';
+import { Thanks } from '@/app/components/thanks';
+
+const ContactPage = () => {
+   const [isCompleted, setIsCompleted] = useState(false);
+
+   const fields = [
+      {
+         name: 'Name',
+         type: 'text',
+         placeholder: "Optional: What's your name?"
+      },
+      {
+         name: 'Email',
+         type: 'email',
+         required: true
+      },
+      {
+         name: 'Message',
+         label: 'Message',
+         type: 'textarea',
+         placeholder: 'How can I help?',
+         required: true
+      },
+      {
+         name: 'Submit',
+         type: 'submit'
+      }
+   ];
+
+   const handleForm = formData => {
+      console.log('Form submitted with data:', formData);
+      setIsCompleted(true);
+   };
+
+   return isCompleted ? (
+      <Thanks
+         heading='Thanks :)'
+         content="I'll get back to you ASAP"
+         links={[
+            { text: 'Have a project in mind?', href: '/journey' },
+            { text: 'Any questions?', href: '/faq' },
+         ]}
+      />
+   ) : (
+      <Form fields={fields} handleForm={handleForm} />
+   );
+};
+
+export default ContactPage;

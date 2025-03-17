@@ -70,7 +70,11 @@
 
    --clickable-div-bg: var(--background);
    --clickable-div-hover-bg: var(--main);
-   --clickable-div-hover-text: color-mix(in oklab, var(--clickable-div-hover-bg) 50%, black);
+   --clickable-div-hover-text: color-mix(
+      in oklab,
+      var(--clickable-div-hover-bg) 50%,
+      black
+   );
    --clickable-div-selected-bg: var(--yes);
    --clickable-div-selected-text: var(--text-selected);
 
@@ -141,8 +145,15 @@ body {
 }
 
 a {
-   color: inherit;
+   color: var(--link);
    text-decoration: none;
+
+   @media (min-width: 800px) {
+      transition: color 300ms;
+      &:hover {
+         color: var(--link-hover-brighter);
+      }
+   }
 }
 
 main {
