@@ -17,7 +17,7 @@ const Why = () => {
                      {typeof item.content === 'string' ? (
                         <p>{item.content}</p>
                      ) : (
-                        <ul>
+                        <ul className={styles.ul}>
                            {item.content.map((content, index) => (
                               <li key={index}>{content}</li>
                            ))}

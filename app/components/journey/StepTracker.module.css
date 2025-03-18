@@ -40,7 +40,9 @@
          }
 
          .stepTextWrap {
-            * {
+            .stepText,
+            .stepChoice,
+            .stepChoiceIcon {
                transition: color 0.3s;
             }
 
@@ -72,7 +74,9 @@
 
             @media (min-width: 800px) {
                &:hover {
-                  * {
+                  .stepText,
+                  .stepChoice,
+                  .stepChoiceIcon {
                      color: var(--tracker-hover-text);
                   }
                }
@@ -100,7 +104,9 @@
 
          @media (min-width: 800px) {
             .stepTextWrap:hover {
-               * {
+               .stepText,
+               .stepChoice,
+               .stepChoiceIcon {
                   color: var(--tracker-step-text);
                }
             }

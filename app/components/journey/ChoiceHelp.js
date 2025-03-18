@@ -7,7 +7,12 @@ const ChoiceHelp = ({ choice, isHovered, isSelected }) => {
       return null;
    }
    return (
-      <div className={classNames(styles.help, isHovered && styles.hovered, isSelected && styles.selected)}>
+      <div
+         className={classNames(
+            styles.help,
+            isHovered && styles.hovered,
+            isSelected && styles.selected
+         )}>
          {choice.moreInfo && (
             <div className={styles.moreInfo}>
                <div className={styles.iconWrap}>
@@ -21,7 +26,7 @@ const ChoiceHelp = ({ choice, isHovered, isSelected }) => {
                {choice.pros && (
                   <div className={styles.pros}>
                      <div className={styles.head}>Pros</div>
-                     <ul>
+                     <ul className={styles.ul}>
                         {choice.pros.map((pro, index) => (
                            <li key={index}>{pro}</li>
                         ))}
@@ -31,7 +36,7 @@ const ChoiceHelp = ({ choice, isHovered, isSelected }) => {
                {choice.cons && (
                   <div className={styles.cons}>
                      <div className={styles.head}>Cons</div>
-                     <ul>
+                     <ul className={styles.ul}>
                         {choice.cons.map((con, index) => (
                            <li key={index}>{con}</li>
                         ))}

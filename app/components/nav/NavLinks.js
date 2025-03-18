@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import styles from './NavLinks.module.css';
 
-const NavLinks = ({ handleLinkClick = null }) => {
+const NavLinks = ({ handleLinkClick = null, isMobile = true }) => {
    const linkDefs = [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
@@ -11,11 +12,13 @@ const NavLinks = ({ handleLinkClick = null }) => {
    ];
 
    return (
-      <nav>
-         <ul>
+      <nav className={isMobile ? styles.mobileNav : styles.nav}>
+         <ul className={styles.ul}>
             {linkDefs.map(({ name, path }) => (
                <li key={name} onClick={handleLinkClick}>
-                  <Link href={path}>{name}</Link>
+                  <Link className={styles.link} href={path}>
+                     {name}
+                  </Link>
                </li>
             ))}
          </ul>

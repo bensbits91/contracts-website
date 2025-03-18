@@ -1,4 +1,4 @@
-import { Heading } from '@/app/components/typography';
+import { Heading, Text } from '@/app/components/typography';
 import styles from './EndStep.module.css';
 
 const EndStep = ({ step }) => {
@@ -12,8 +12,10 @@ const EndStep = ({ step }) => {
          <p>{description}</p>
          {whatsNext && (
             <div className={styles.whatsNext}>
-               <Heading level='3'>What's next?</Heading>
-               <p>{whatsNext}</p>
+               <Heading level='3' top='lg'>
+                  What's next?
+               </Heading>
+               <Text top='md' string={whatsNext} />
             </div>
          )}
          {/* <div>links and icons and such</div> */}
