@@ -6,10 +6,6 @@ const Form = ({ fields, handleForm }) => {
    const [formData, setFormData] = useState({});
    const [isFormValid, setIsFormValid] = useState(false);
 
-   if (!fields) {
-      return null;
-   }
-
    // useEffect(() => {
    //    // Prefill form data with userInputs when the step changes
    //    if (fields) {
@@ -53,6 +49,10 @@ const Form = ({ fields, handleForm }) => {
       handleForm(formData);
       // setFormData({});
    };
+
+   if (!fields) {
+      return null;
+   }
 
    return (
       <form className={styles.form} onSubmit={handleSubmit}>

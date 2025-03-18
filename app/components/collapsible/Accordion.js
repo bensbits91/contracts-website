@@ -36,7 +36,7 @@ const Accordion = ({ collapsibleItems }) => {
       } else {
          setFilteredItems(collapsibleItems);
       }
-   }, [searchTerm]);
+   }, [searchTerm, collapsibleItems]);
 
    const toggleItem = index => {
       setOpenItems(prevState => {
