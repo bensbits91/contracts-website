@@ -7,8 +7,8 @@ const ModalHeader = ({ headingText, handleClose }) => {
    return (
       <div className={styles.header}>
          <Heading level='1'>{headingText}</Heading>
-         <div>
-            <Button variant='clear' onClick={handleClose}>
+         <div className={styles.buttonWrap}>
+            <Button className={styles.button} variant='clear' onClick={handleClose}>
                <CloseIcon />
             </Button>
          </div>
