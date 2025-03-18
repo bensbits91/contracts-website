@@ -5,9 +5,10 @@ const Overlay = ({ shadow = false, hide = true, handleClick }) => {
    return (
       <div
          className={classNames(
+            'overlay', // allows body:has(.overlay) in global css
             styles.overlay,
             shadow && styles.shadow,
-            hide && styles.hide
+            hide && styles.hide // used when animating the modal closing
          )}
          onClick={handleClick}
       />

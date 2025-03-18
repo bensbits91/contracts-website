@@ -1,3 +1,47 @@
+.trackerHeader {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 10px;
+}
+.trackerHelp {
+   color: var(--text-subtle);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .iconWrap {
+      height: 20px;
+      width: 20px;
+   }
+
+   .textWrap {
+      flex: 1;
+      padding: 0 10px;
+      font-size: 0.9em;
+      max-width: 180px;
+   }
+}
+
+.tracker {
+   margin-top: 10px;
+   width: 100%;
+   height: 100px;
+   overflow-y: scroll;
+   background-color: var(--tracker-mobile-bg);
+   padding: 10px;
+}
+
+@media (min-width: 640px) {
+   .tracker {
+      width: 220px;
+      height: unset;
+      /* background-color: transparent; */
+      /* padding: 0; */
+      max-height: 400px;
+   }
+}
+
 .stepTracker {
    display: flex;
    flex-direction: column;
@@ -34,9 +78,9 @@
                color: var(--tracker-step-completed-icon);
             }
 
-            @media (min-width: 640px) {
+            /* @media (min-width: 640px) {
                background-color: var(--background);
-            }
+            } */
          }
 
          .stepTextWrap {
@@ -59,6 +103,12 @@
                display: flex;
                align-items: center;
                color: var(--tracker-choice-text);
+
+               @media (min-width: 800px) {
+                  .stepChoiceText {
+                     max-width: 120px;
+                  }
+               }
 
                .stepChoiceIcon {
                   color: var(--tracker-choice-icon);

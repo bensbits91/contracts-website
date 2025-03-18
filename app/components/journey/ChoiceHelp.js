@@ -1,4 +1,4 @@
-import { QuestionIcon } from '@/app/components/icons';
+import { Help } from '@/app/components/help';
 import styles from './ChoiceHelp.module.css';
 import classNames from '@/utils/classNames';
 
@@ -14,12 +14,11 @@ const ChoiceHelp = ({ choice, isHovered, isSelected }) => {
             isSelected && styles.selected
          )}>
          {choice.moreInfo && (
-            <div className={styles.moreInfo}>
-               <div className={styles.iconWrap}>
-                  <QuestionIcon />
-               </div>
-               <div className={styles.textWrap}>{choice.moreInfo}</div>
-            </div>
+            <Help
+               text={choice.moreInfo}
+               isParentHovered={isHovered}
+               isParentSelected={isSelected}
+            />
          )}
          {(choice.pros || choice.cons) && (
             <div className={styles.prosCons}>

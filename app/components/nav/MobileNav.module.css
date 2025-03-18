@@ -1,8 +1,14 @@
 .mobileNav {
    position: fixed;
-   top: 10px;
-   right: 10px;
+   top: 0;
+   right: 0;
    z-index: 1000;
+   left: 0;
+   display: flex;
+   justify-content: flex-end;
+   padding: 5px;
+   background: var(--nav-bg);
+   border-bottom: 1px solid var(--border-subtle);
 
    .buttonWrap {
       height: 30px;

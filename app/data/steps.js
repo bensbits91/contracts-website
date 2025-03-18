@@ -321,7 +321,7 @@ const imageQs = [
          { stepSlug: 'image-count', choiceText: 'More' }
       ],
       heading: 'Image Optimization',
-      description: 'Will you need to optimize images?',
+      description: 'Will you need help optimizing images?',
       nextSlug: 'image-storage',
       choices: [
          {

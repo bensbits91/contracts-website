@@ -7,11 +7,12 @@
    padding: 10px;
    cursor: pointer;
    transition: all 0.3s;
-   /* width: 150px; */
    height: 100%;
    width: 100%;
 
    @media (min-width: 800px) {
+      width: max-content;
+
       &:hover {
          background-color: var(--button-hover-bg);
          color: var(--button-hover-text);
@@ -36,6 +37,7 @@
       color: var(--button-clear-text);
       border-color: var(--button-clear-border);
       padding: 0;
+      width: 100%;
 
       @media (min-width: 800px) {
          &:hover {
