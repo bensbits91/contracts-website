@@ -64,10 +64,10 @@
             height: 35px;
             background-color: var(--tracker-mobile-bg);
             color: var(--tracker-step-icon);
-            display: flex;
+            /* display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: bold; */
             margin-right: 10px;
 
             &.active {
