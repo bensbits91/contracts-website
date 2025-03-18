@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import useJourneyStore from '@/app/store/useJourneyStore';
+import { Help } from '@/app/components/help';
+import { Heading } from '@/app/components/typography';
 import {
    CircleIcon,
    CircleCaratIcon,
@@ -31,99 +33,117 @@ const StepTracker = () => {
    }, [currentStep]);
 
    return (
-      <div className={styles.stepTracker}>
-         {steps.map((step, index) => {
-            const { slug, showIf } = step;
-            const isActive = slug === currentStep.slug;
-            const userChoice = userChoices && userChoices[slug];
-            const isContactFormCompleted = slug === 'contact' && userInputs?.email;
-            const isStepCompleted =
-               userChoice ||
-               isContactFormCompleted ||
-               (slug === 'submit' && currentStep.slug === 'end'); // make the submit step completed if the user is on the end step
+      <>
+         <div className={styles.trackerHeader}>
+            <Heading level='2' like='4'>
+               Step Tracker
+            </Heading>
+            <Help
+               size='sm'
+               showText={false}
+               text='Track your progress, skip steps or go back and change your answers.'
+            />
+         </div>
+         <div className={styles.tracker}>
+            <div className={styles.stepTracker}>
+               {steps.map((step, index) => {
+                  const { slug, showIf } = step;
+                  const isActive = slug === currentStep.slug;
+                  const userChoice = userChoices && userChoices[slug];
+                  const isContactFormCompleted = slug === 'contact' && userInputs?.email;
+                  const isStepCompleted =
+                     userChoice ||
+                     isContactFormCompleted ||
+                     (slug === 'submit' && currentStep.slug === 'end'); // make the submit step completed if the user is on the end step
 
-            const isDisabled = slug === 'submit' && !userInputs?.email;
+                  const isDisabled = slug === 'submit' && !userInputs?.email;
 
-            const shouldHide = showIf
-               ? !showIf.some(condition =>
-                    condition.choiceText
-                       ? userChoices[condition.stepSlug] === condition.choiceText
-                       : userChoices.hasOwnProperty(condition.stepSlug)
-                 )
-               : slug === 'end'
-               ? true
-               : false;
+                  const shouldHide = showIf
+                     ? !showIf.some(condition =>
+                          condition.choiceText
+                             ? userChoices[condition.stepSlug] === condition.choiceText
+                             : userChoices.hasOwnProperty(condition.stepSlug)
+                       )
+                     : slug === 'end'
+                     ? true
+                     : false;
 
-            if (shouldHide) {
-               return null; // todo: if user selects a choice that shows a step, fills in data, then goes back and changes to hide that step, the data should be cleared
-            }
+                  if (shouldHide) {
+                     return null; // todo: if user selects a choice that shows a step, fills in data, then goes back and changes to hide that step, the data should be cleared
+                  }
 
-            const StepIcon = () =>
-               isActive ? (
-                  <CircleCaratIcon />
-               ) : isStepCompleted ? (
-                  <CircleCheckIcon />
-               ) : (
-                  <CircleIcon />
-               );
+                  const StepIcon = () =>
+                     isActive ? (
+                        <CircleCaratIcon />
+                     ) : isStepCompleted ? (
+                        <CircleCheckIcon />
+                     ) : (
+                        <CircleIcon />
+                     );
 
-            const needsLineBelowIndex = steps.length - 2; // account for the last step being hidden
+                  const needsLineBelowIndex = steps.length - 2; // account for the last step being hidden
 
-            // todo: move to string utils
-            const getTextFromAnything = anything => {
-               if (typeof anything === 'string') {
-                  return anything;
-               } else if (Array.isArray(anything)) {
-                  return anything.join(', ');
-               } else {
-                  return Object.values(anything).join(', ');
-               }
-            };
+                  // todo: move to string utils
+                  const getTextFromAnything = anything => {
+                     if (typeof anything === 'string') {
+                        return anything;
+                     } else if (Array.isArray(anything)) {
+                        return anything.join(', ');
+                     } else {
+                        return Object.values(anything).join(', ');
+                     }
+                  };
 
-            return (
-               <div
-                  key={index}
-                  ref={el => (stepRefs.current[index] = el)}
-                  className={classNames(styles.step, isDisabled && styles.disabled)}
-                  onClick={isDisabled ? null : () => handleNavigate(step)}>
-                  <div className={styles.stepContent}>
+                  return (
                      <div
-                        className={classNames(
-                           styles.stepIcon,
-                           isActive && styles.active,
-                           isStepCompleted && !isActive && styles.completed
-                        )}>
-                        <StepIcon />
-                     </div>
-                     <div className={styles.stepTextWrap}>
-                        <div
-                           className={classNames(
-                              styles.stepText,
-                              isActive && styles.activeStepText
-                           )}>
-                           {step.heading}
-                        </div>
-                        {userChoice && (
+                        key={index}
+                        ref={el => (stepRefs.current[index] = el)}
+                        className={classNames(styles.step, isDisabled && styles.disabled)}
+                        onClick={isDisabled ? null : () => handleNavigate(step)}>
+                        <div className={styles.stepContent}>
                            <div
                               className={classNames(
-                                 styles.stepChoice,
-                                 isActive && styles.activeStepChoice
+                                 styles.stepIcon,
+                                 isActive && styles.active,
+                                 isStepCompleted && !isActive && styles.completed
                               )}>
-                              <div>{getTextFromAnything(userChoice)}</div>
-                              {!isActive && (
-                                 <div className={styles.stepChoiceIcon}>
-                                    <PencilIcon />
+                              <StepIcon />
+                           </div>
+                           <div className={styles.stepTextWrap}>
+                              <div
+                                 className={classNames(
+                                    styles.stepText,
+                                    isActive && styles.activeStepText
+                                 )}>
+                                 {step.heading}
+                              </div>
+                              {userChoice && (
+                                 <div
+                                    className={classNames(
+                                       styles.stepChoice,
+                                       isActive && styles.activeStepChoice
+                                    )}>
+                                    <div className={styles.stepChoiceText}>
+                                       {getTextFromAnything(userChoice)}
+                                    </div>
+                                    {!isActive && (
+                                       <div className={styles.stepChoiceIcon}>
+                                          <PencilIcon />
+                                       </div>
+                                    )}
                                  </div>
                               )}
                            </div>
+                        </div>
+                        {index < needsLineBelowIndex && (
+                           <div className={styles.stepLine}></div>
                         )}
                      </div>
-                  </div>
-                  {index < needsLineBelowIndex && <div className={styles.stepLine}></div>}
-               </div>
-            );
-         })}
-      </div>
+                  );
+               })}
+            </div>
+         </div>
+      </>
    );
 };
 

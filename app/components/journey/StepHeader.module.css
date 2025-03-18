@@ -1,10 +1,11 @@
 .headWrap {
    display: flex;
    justify-content: space-between;
-   align-items: center;
    margin-bottom: 12px;
    padding: 12px;
-   gap: 40px;
+   gap: 20px;
+
+   flex-direction: column;
 
    .textWrap {
       display: flex;
@@ -12,7 +13,13 @@
       gap: 8px;
    }
 
-   .toggleWrap {
-      width: 210px;
+   @media (min-width: 640px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+
+      .toggleWrap {
+         width: 210px;
+      }
    }
 }

@@ -1,0 +1,61 @@
+.help {
+   color: var(--text-subtle);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+
+   .iconWrap {
+      height: 30px;
+      width: 30px;
+   }
+
+   .textWrap {
+      flex: 1;
+      padding: 0 10px;
+   }
+
+   .hiddenText {
+      display: none;
+
+      &.visible {
+         display: block;
+         position: absolute;
+         top: 20px;
+         left: -100px;
+         z-index: 1001;
+         background-color: var(--main);
+         color: var(--background);
+         padding: 10px;
+         border-radius: 5px;
+         width: min-content;
+         min-width: 200px;
+      }
+   }
+
+   &.clickable {
+      cursor: pointer;
+   }
+
+   &.sm {
+      .iconWrap {
+         height: 20px;
+         width: 20px;
+      }
+
+      .textWrap {
+         flex: 1;
+         padding: 0 10px;
+         font-size: 0.9em;
+      }
+   }
+
+   /* todo: these colors brittle, assumes that the parent is a clickable div */
+   &.hovered {
+      color: var(--clickable-div-hover-text);
+   }
+
+   &.selected {
+      color: var(--clickable-div-selected-text);
+   }
+}

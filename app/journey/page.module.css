@@ -1,7 +1,6 @@
 .steps {
    display: flex;
    gap: 20px;
-
    flex-direction: column;
 
    .step {
@@ -9,13 +8,10 @@
       order: 2;
    }
 
-   .tracker {
-      margin-top: 10px;
-      width: 100%;
-      height: 100px;
-      overflow-y: scroll;
-      background-color: var(--tracker-mobile-bg);
-      padding: 10px;
+   .trackerWrap {
+      order: 1;
+      padding-top: 30px;
+      padding-bottom: 20px;
    }
 
    @media (min-width: 640px) {
@@ -23,17 +19,14 @@
       gap: 60px;
 
       .step {
-         order: 1;
          width: 550px;
+         order: 1;
       }
 
-      .tracker {
+      .trackerWrap {
          order: 2;
-         width: 200px;
-         height: unset;
-         overflow-y: unset;
-         background-color: transparent;
          padding: 0;
+         max-width: 180px;
       }
    }
 }

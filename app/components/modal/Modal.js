@@ -4,7 +4,7 @@ import ModalMenu from './ModalMenu';
 // import ModalEditables from './ModalEditables';
 import ModalImage from './ModalImage';
 // import ModalDetails from './ModalDetails';
-import { Overlay } from '@/app/components//overlay';
+import { Overlay } from '@/app/components/overlay';
 import styles from './Modal.module.css';
 import classNames from '@/utils/classNames';
 

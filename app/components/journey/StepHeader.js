@@ -10,7 +10,7 @@ const StepHeader = () => {
    return (
       <div className={styles.headWrap}>
          <div className={styles.textWrap}>
-            <Heading level='2' color='blue'>{heading}</Heading>
+            <Heading level='2' like='3' color='blue'>{heading}</Heading>
             <p>{description}</p>
          </div>
          {hasHelp && (
