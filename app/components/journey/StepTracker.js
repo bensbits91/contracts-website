@@ -17,7 +17,7 @@ const StepTracker = () => {
 
    useEffect(() => {
       initialize();
-   }, []);
+   }, [initialize]);
 
    const stepRefs = useRef([]);
    useEffect(() => {
