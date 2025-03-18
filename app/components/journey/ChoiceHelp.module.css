@@ -33,7 +33,7 @@
 
       .pros,
       .cons {
-         ul {
+         .ul {
             padding-left: 18px;
          }
       }

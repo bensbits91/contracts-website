@@ -7,7 +7,7 @@
    padding: 10px;
    cursor: pointer;
    transition: all 0.3s;
-   width: 150px;
+   /* width: 150px; */
 
    @media (min-width: 800px) {
       &:hover {

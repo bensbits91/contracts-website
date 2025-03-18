@@ -4,8 +4,5 @@
    align-items: start;
    gap: 12px;
    padding-left: 24px;
-
-   textarea {
-      padding: 10px;
-   }
+   padding-right: 24px;
 }

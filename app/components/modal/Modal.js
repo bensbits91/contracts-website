@@ -28,7 +28,7 @@ const Modal = ({
 
    if (!modalData && !isClosing) return null;
 
-   const { headingText = 'asdf', img = null } = modalData || {};
+   const { headingText = '', img = null } = modalData || {};
 
    const handleClose = () => {
       setIsClosing(true);
