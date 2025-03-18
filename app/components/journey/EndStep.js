@@ -13,7 +13,7 @@ const EndStep = ({ step }) => {
          {whatsNext && (
             <div className={styles.whatsNext}>
                <Heading level='3' top='lg'>
-                  What's next?
+                  What&apos;s next?
                </Heading>
                <Text top='md' string={whatsNext} />
             </div>

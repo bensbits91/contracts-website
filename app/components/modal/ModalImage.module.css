@@ -5,7 +5,8 @@
    max-width: 250px;
    min-width: 175px;
 
-   img {
+   /* TODO: Vercel will not let me deploy this impure selector */
+   /* img {
       object-fit: contain;
-   }
+   } */
 }
