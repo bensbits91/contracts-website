@@ -64,10 +64,6 @@
             height: 35px;
             background-color: var(--tracker-mobile-bg);
             color: var(--tracker-step-icon);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
             margin-right: 10px;
 
             &.active {
@@ -77,10 +73,6 @@
             &.completed {
                color: var(--tracker-step-completed-icon);
             }
-
-            /* @media (min-width: 640px) {
-               background-color: var(--background);
-            } */
          }
 
          .stepTextWrap {
