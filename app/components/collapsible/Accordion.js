@@ -138,7 +138,7 @@ const Accordion = ({ collapsibleItems }) => {
                         {
                            type: 'textarea',
                            label: 'Your question',
-                           placeholder: 'Type your question here',
+                           placeholder: '',
                            name: 'Your question',
                            required: true
                         },

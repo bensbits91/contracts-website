@@ -21,7 +21,7 @@ const TextInput = ({
          name={name}
          value={value}
          required={required}
-         placeholder={placeholder || (required ? 'Required' : '')}
+         placeholder={placeholder /*  || (required ? 'Required' : '') */}
          onChange={onChange}
       />
    </div>

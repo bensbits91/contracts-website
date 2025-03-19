@@ -10,7 +10,7 @@ const ContactPage = () => {
       {
          name: 'Name',
          type: 'text',
-         placeholder: "Optional: What's your name?"
+         placeholder: ''
       },
       {
          name: 'Email',
@@ -21,7 +21,7 @@ const ContactPage = () => {
          name: 'Message',
          label: 'Message',
          type: 'textarea',
-         placeholder: 'How can I help?',
+         placeholder: '',
          required: true
       },
       {

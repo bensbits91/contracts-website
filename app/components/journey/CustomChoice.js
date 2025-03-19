@@ -11,7 +11,7 @@ const CustomChoice = ({
       <div className={styles.wrap}>
          <Textarea
             name='customChoice'
-            placeholder='Write your own'
+            placeholder=''
             onChange={handleCustomChoiceChange}
             value={customChoiceText}
          />
