@@ -11,13 +11,14 @@ const Button = ({
 }) => {
    return (
       <button
+         name={name || children}
+         aria-label={name || children}
          className={classNames(
             styles.button,
             styles[variant],
             styles[size],
             disabled && styles.disabled
          )}
-         name={name || children}
          onClick={onClick}
          disabled={disabled}>
          {children}
