@@ -84,7 +84,7 @@
    --con-head: color-mix(in oklab, var(--con-text) 60%, black);
 
    --button-bg: color-mix(in oklab, var(--link) 80%, black);
-   --button-text: color-mix(in oklab, var(--link) 40%, black);
+   --button-text: color-mix(in oklab, var(--link) 20%, black);
    --button-border: color-mix(in oklab, var(--link) 20%, black);
    --button-hover-bg: var(--link-hover);
    --button-hover-text: color-mix(in oklab, var(--link) 40%, black);
@@ -99,7 +99,7 @@
    --button-clear-border: transparent;
 
    --input-bg: color-mix(in oklab, var(--background) 99%, black);
-   --input-placeholder: var(--text-subtle);
+   --input-placeholder: color-mix(in oklab, var(--background) 30%, white);
 
    --toggle-switch-bg: var(--main);
    --toggle-checked-bg: var(--main);

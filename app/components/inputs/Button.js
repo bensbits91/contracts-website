@@ -3,6 +3,7 @@ import classNames from '@/utils/classNames';
 
 const Button = ({
    children,
+   name,
    onClick,
    variant = 'primary',
    size = 'md',
@@ -16,7 +17,7 @@ const Button = ({
             styles[size],
             disabled && styles.disabled
          )}
-         name={children}
+         name={name || children}
          onClick={onClick}
          disabled={disabled}>
          {children}

@@ -19,7 +19,7 @@ const MobileNav = () => {
    return (
       <div className={styles.mobileNav}>
          <div className={styles.buttonWrap}>
-            <Button variant='clear' onClick={() => setModalData({ headingText: '' })}>
+            <Button name='mobile navigation menu toggle' variant='clear' onClick={() => setModalData({ headingText: '' })}>
                <MobileNavIcon />
             </Button>
          </div>
