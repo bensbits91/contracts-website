@@ -10,13 +10,14 @@ const TextInput = ({
    onChange
 }) => (
    <div className={styles.inputWrap}>
-      <label className={styles.label}>
+      <label htmlFor={name.replace(' ', '-')} className={styles.label}>
          {label}
          {required && <span>*</span>}
       </label>
       <input
          className={styles.input}
          type={type}
+         id={name.replace(' ', '-')}
          name={name}
          value={value}
          required={required}
