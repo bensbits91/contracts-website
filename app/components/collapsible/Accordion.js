@@ -85,7 +85,7 @@ const Accordion = ({ collapsibleItems }) => {
                         type='search'
                         name='search'
                         required={false}
-                        placeholder='Search'
+                        placeholder=''
                         onChange={handleSearch}
                      />
                   </div>
