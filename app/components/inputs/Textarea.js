@@ -13,7 +13,7 @@ const Textarea = ({
    return (
       <div className={styles.wrap}>
          {label && (
-            <label className={styles.label}>
+            <label htmlFor={name.replace(' ', '-')} className={styles.label}>
                {label}
                {required && <span>*</span>}
             </label>
@@ -22,10 +22,11 @@ const Textarea = ({
             className={styles.input}
             rows={rows || '4'}
             // cols={cols || '50'}
-            placeholder={placeholder}
+            id={name.replace(' ', '-')}
             name={name}
             value={value}
             required={required}
+            placeholder={placeholder}
             onChange={onChange}
          />
       </div>
