@@ -99,7 +99,7 @@
    --button-clear-border: transparent;
 
    --input-bg: color-mix(in oklab, var(--background) 99%, black);
-   --input-placeholder: color-mix(in oklab, var(--background) 30%, white);
+   --input-placeholder: /* color-mix(in oklab, var(--background) 30%, */ white/* ) */;
 
    --toggle-switch-bg: var(--main);
    --toggle-checked-bg: var(--main);
