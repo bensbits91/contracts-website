@@ -13,7 +13,7 @@ const useJourneyStore = create((set, get) => ({
    showHelp: false,
    initialize: () => {
       const clientInfo = collectUserInfo();
-      console.log('bb ~ useJourneyStore.js:16 ~ useJourneyStore ~ clientInfo:', clientInfo);
+      // console.log('bb ~ useJourneyStore.js:16 ~ useJourneyStore ~ clientInfo:', clientInfo);
       set({ userInfo: clientInfo });
    },
    handleChoice: ({ currentStep, choice }) => {
