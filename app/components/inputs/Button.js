@@ -16,6 +16,7 @@ const Button = ({
             styles[size],
             disabled && styles.disabled
          )}
+         name={children}
          onClick={onClick}
          disabled={disabled}>
          {children}
