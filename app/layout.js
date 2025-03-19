@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-   title: 'Bennett Brooks Consulting',
-   description: 'Public website for Bennett Brooks Consulting'
+   title: 'Ben Brooks Dev',
+   description:
+      'Ben Brooks Dev is a personal portfolio site for Ben Brooks, a full-stack web developer.'
 };
 
 export default function RootLayout({ children }) {

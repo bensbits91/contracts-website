@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+// import styles from './page.module.css';
 import MdRenderer from '@/lib/MdRenderer';
 import getMdContent from '@/utils/getMdContent';
 import { Section } from '@/app/components/layout';
