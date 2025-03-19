@@ -54,7 +54,7 @@
    --link-hover: color-mix(in oklab, var(--link) 80%, white);
    --link-hover-brighter: color-mix(in oklab, var(--link) 60%, white);
 
-   --text-subtle: color-mix(in oklab, var(--background) 50%, white);
+   --text-subtle: color-mix(in oklab, var(--background) 30%, white);
    --text-selected: color-mix(in oklab, var(--yes) 50%, black);
 
    --border: var(--main);
