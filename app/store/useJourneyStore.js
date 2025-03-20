@@ -43,17 +43,20 @@ const useJourneyStore = create((set, get) => ({
          };
       });
    },
-   handleForm: ({ formData, nextSlug }) => {
+   handleForm: async ({ formData, nextSlug }) => {
       set(state => {
          const updatedInputs = { ...state.userInputs, ...formData };
-         if (nextSlug === 'end') {
-            const finalData = {
-               info: state.userInfo,
-               inputs: updatedInputs,
-               choices: state.userChoices
-            };
-            console.log('Final Data:', finalData);
-         }
+         // if (nextSlug === 'end') {
+         //    const finalData = {
+         //       info: state.userInfo,
+         //       inputs: updatedInputs,
+         //       choices: state.userChoices
+         //    };
+         //    console.log('Final Data:', finalData);
+         //    // return finalData;
+            
+         // }
+
          get().handleNavigateFromSlug(nextSlug);
 
          return {
