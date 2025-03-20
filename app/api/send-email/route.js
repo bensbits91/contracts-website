@@ -5,7 +5,7 @@ const POST = async request => {
    try {
       const { name, email, message } = await request.json();
 
-      if (/* !name ||  */!email || !message) {
+      if (/* !name ||  */ !email || !message) {
          return new Response(JSON.stringify({ error: 'All fields are required' }), {
             status: 400,
             headers: { 'Content-Type': 'application/json' }
@@ -28,6 +28,9 @@ const POST = async request => {
       // Create a transporter object using SMTP transport
       const transporter = nodemailer.createTransport({
          service: 'gmail',
+         port: 465,
+         host: 'smtp.gmail.com',
+         secure: true,
          auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
@@ -36,9 +39,9 @@ const POST = async request => {
 
       // Email options
       const mailOptions = {
-         from: sanitizedEmail, // I think it's sent from my 'to' email, which is fine; including sender email address in the body of the email
+         from: process.env.EMAIL_USER, // I think it's sent from my 'to' email, which is fine; including sender email address in the body of the email
          to: process.env.EMAIL_USER,
-         subject: `Message from ${sanitizedName}`,
+         subject: `Message from ${sanitizedEmail}`,
          text: `From: ${sanitizedEmail}\n\nName: ${sanitizedName}\n\n${sanitizedMessage}`
       };
 
