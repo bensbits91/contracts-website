@@ -1,10 +1,17 @@
 'use client';
-import { useState } from 'react';
+import useEmailStore from '@/app/store/useEmailStore';
 import { Form } from '@/app/components/form';
-import { Thanks } from '@/app/components/thanks';
 
 const ContactPage = () => {
-   const [isCompleted, setIsCompleted] = useState(false);
+   const {
+      isSending,
+      isSent,
+      errorData,
+      handleSubmit,
+      SendingComponent,
+      SentComponent,
+      ErrorComponent
+   } = useEmailStore();
 
    const fields = [
       {
@@ -30,22 +37,15 @@ const ContactPage = () => {
       }
    ];
 
-   const handleForm = formData => {
-      console.log('Form submitted with data:', formData);
-      setIsCompleted(true);
-   };
+   const isNormal = !isSending && !isSent && !errorData;
 
-   return isCompleted ? (
-      <Thanks
-         heading='Thanks :)'
-         content="I'll get back to you ASAP"
-         links={[
-            { text: 'Have a project in mind?', href: '/journey' },
-            { text: 'Any questions?', href: '/faq' }
-         ]}
-      />
-   ) : (
-      <Form fields={fields} handleForm={handleForm} />
+   return (
+      <>
+         {isNormal && <Form fields={fields} handleForm={handleSubmit} />}
+         {isSending && <SendingComponent />}
+         {isSent && <SentComponent />}
+         {errorData && <ErrorComponent error={errorData} />}
+      </>
    );
 };
 
