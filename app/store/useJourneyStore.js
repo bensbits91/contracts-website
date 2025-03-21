@@ -13,7 +13,6 @@ const useJourneyStore = create((set, get) => ({
    showHelp: false,
    initialize: () => {
       const clientInfo = collectUserInfo();
-      // console.log('bb ~ useJourneyStore.js:16 ~ useJourneyStore ~ clientInfo:', clientInfo);
       set({ userInfo: clientInfo });
    },
    handleChoice: ({ currentStep, choice }) => {
@@ -46,17 +45,6 @@ const useJourneyStore = create((set, get) => ({
    handleForm: async ({ formData, nextSlug }) => {
       set(state => {
          const updatedInputs = { ...state.userInputs, ...formData };
-         // if (nextSlug === 'end') {
-         //    const finalData = {
-         //       info: state.userInfo,
-         //       inputs: updatedInputs,
-         //       choices: state.userChoices
-         //    };
-         //    console.log('Final Data:', finalData);
-         //    // return finalData;
-            
-         // }
-
          get().handleNavigateFromSlug(nextSlug);
 
          return {
