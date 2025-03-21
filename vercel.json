@@ -1,7 +1,7 @@
 {
-  "functions": {
-    "api/contact": {
-      "maxDuration": 10
-    }
-  }
+   "functions": {
+      "api/contact/route.js": {
+         "maxDuration": 10
+      }
+   }
 }
