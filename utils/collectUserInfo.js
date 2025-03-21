@@ -1,4 +1,4 @@
-export function collectUserInfo() {
+export async function collectUserInfo() {
    // TODO: privacy policy??
    const userInfo = {
       userAgent: navigator.userAgent,

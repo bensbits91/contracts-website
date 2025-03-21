@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import useEmailStore from '@/app/store/useEmailStore';
 import Collapsible from './Collapsible';
 import { Heading } from '@/app/components/typography';
 import { Button, TextInput, Toggle } from '@/app/components/inputs';
@@ -26,6 +27,17 @@ const Accordion = ({ collapsibleItems }) => {
 
    const [modalData, setModalData] = useState(null);
    const handleCloseModal = () => setModalData(null);
+
+   const {
+      isSending,
+      isSent,
+      errorData,
+      handleSubmit,
+      SendingComponent,
+      ErrorComponent,
+      reset
+   } = useEmailStore();
+   const isNormal = !isSending && !isSent && !errorData;
 
    useEffect(() => {
       if (searchTerm) {
@@ -59,12 +71,16 @@ const Accordion = ({ collapsibleItems }) => {
 
    const handleQuestionSubmit = formData => {
       console.log('formData', formData);
+      const { name, email, question } = formData;
+      const finalData = { email, name, message: question };
       // send to server
+      handleSubmit(finalData);
       // if success,
-      setModalData({ headingText: 'Thanks!', hasForm: false });
+      setModalData({ headingText: 'Thanks!', hasForm: true });
    };
 
    const handleAskAnotherQuestion = () => {
+      reset();
       setModalData({ headingText: 'Ask another question', hasForm: true });
    };
 
@@ -127,40 +143,51 @@ const Accordion = ({ collapsibleItems }) => {
                modalData={modalData}
                //    actions={modalActions}
                handleCloseModal={handleCloseModal}>
-               {modalData.hasForm ? (
-                  <Form
-                     fields={[
-                        {
-                           type: 'email',
-                           name: 'Your email',
-                           required: true
-                        },
-                        {
-                           type: 'textarea',
-                           label: 'Your question',
-                           placeholder: '',
-                           name: 'Your question',
-                           required: true
-                        },
-                        {
-                           name: 'Submit',
-                           type: 'submit'
-                        }
-                     ]}
-                     handleForm={handleQuestionSubmit}
-                  />
-               ) : (
-                  <Thanks
-                     content='Thanks for your question!'
-                     buttons={[
-                        {
-                           text: 'Ask another question',
-                           onClick: handleAskAnotherQuestion
-                        },
-                        { text: 'Done', onClick: handleCloseModal }
-                     ]}
-                  />
-               )}
+               {modalData.hasForm &&
+                  (isNormal ? (
+                     <Form
+                        fields={[
+                           {
+                              type: 'text',
+                              name: 'name',
+                              label: 'Your name'
+                           },
+                           {
+                              type: 'email',
+                              name: 'email',
+                              label: 'Your email',
+                              required: true
+                           },
+                           {
+                              type: 'textarea',
+                              label: 'Your question',
+                              placeholder: '',
+                              name: 'question',
+                              required: true
+                           },
+                           {
+                              name: 'Submit',
+                              type: 'submit'
+                           }
+                        ]}
+                        handleForm={handleQuestionSubmit}
+                     />
+                  ) : isSending ? (
+                     <SendingComponent />
+                  ) : isSent ? (
+                     <Thanks
+                        content='Thanks for your question!'
+                        buttons={[
+                           {
+                              text: 'Ask another question',
+                              onClick: handleAskAnotherQuestion
+                           },
+                           { text: 'Done', onClick: handleCloseModal }
+                        ]}
+                     />
+                  ) : errorData ? (
+                     <ErrorComponent error={errorData} />
+                  ) : null)}
             </Modal>
          )}
       </>

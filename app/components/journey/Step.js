@@ -7,9 +7,17 @@ import Choices from './Choices';
 import MultiChoices from './MultiChoices';
 import Form from './Form';
 import ChoiceHelp from './ChoiceHelp';
+import { Thanks } from '@/app/components/thanks';
 
 const Step = () => {
-   const { currentStep, showHelp, userInfo, userInputs, userChoices } = useJourneyStore();
+   const {
+      currentStep,
+      showHelp,
+      userInfo,
+      userInputs,
+      userChoices,
+      reset: resetJourney
+   } = useJourneyStore();
    const { form, choices, multi, moreInfo } = currentStep;
    const {
       isSending,
@@ -17,8 +25,8 @@ const Step = () => {
       errorData,
       handleSubmit,
       SendingComponent,
-      SentComponent,
-      ErrorComponent
+      ErrorComponent,
+      reset: resetEmail
    } = useEmailStore();
 
    useEffect(() => {
@@ -34,8 +42,16 @@ const Step = () => {
             message: JSON.stringify({ userChoices, userInputs })
          };
          handleSubmit(finalData);
+         resetEmail();
       }
    }, [currentStep, userInfo, userInputs, userChoices, handleSubmit]);
+
+   useEffect(() => {
+      return () => {
+         resetJourney();
+         resetEmail();
+      };
+   }, [resetJourney, resetEmail]);
 
    return (
       <div>
@@ -44,7 +60,22 @@ const Step = () => {
          {choices && (multi ? <MultiChoices /> : <Choices />)}
          {form && <Form />}
          {isSending && <SendingComponent />}
-         {isSent && <SentComponent />}
+         {isSent && (
+            <Thanks
+               heading='Thanks :)'
+               content="I'll get back to you ASAP"
+               links={[
+                  {
+                     text: 'Have another project in mind?',
+                     onClick: () => {
+                        resetJourney();
+                        resetEmail();
+                     }
+                  },
+                  { text: 'Any questions?', href: '/faq' }
+               ]}
+            />
+         )}
          {errorData && <ErrorComponent error={errorData} />}
       </div>
    );

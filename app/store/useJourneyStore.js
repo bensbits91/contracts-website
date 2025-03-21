@@ -64,7 +64,16 @@ const useJourneyStore = create((set, get) => ({
    },
    handleHelp: () => {
       set(state => ({ showHelp: !state.showHelp }));
-   }
+   },
+   reset: () =>
+      set({
+         currentStep: { ...initialStep },
+         userInfo: {},
+         userInputs: {},
+         userChoices: {},
+         customChoices: {},
+         showHelp: false,
+      })
 }));
 
 export default useJourneyStore;

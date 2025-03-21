@@ -64,7 +64,6 @@ const Form = () => {
                   </Button>
                ) : field.type == 'textarea' ? (
                   <Textarea
-                     placeholder={field.placeholder || field.name}
                      name={field.name}
                      value={formData[field.name.toLowerCase()] || ''}
                      required={field.required}

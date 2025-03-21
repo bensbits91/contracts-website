@@ -74,7 +74,7 @@ const Form = ({ fields, handleForm }) => {
                ) : (
                   <TextInput
                      placeholder={field.placeholder}
-                     label={field.name}
+                     label={field.label || field.name}
                      type={field.type}
                      name={field.name}
                      value={formData[field.name.toLowerCase()] || ''}

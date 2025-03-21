@@ -20,7 +20,7 @@ const useEmailStore = create((set, get) => ({
 
       try {
          // Add user info to form data
-         formData.userInfo = collectUserInfo();
+         formData.userInfo = await collectUserInfo();
 
          // Save form data to MongoDB
          const response = await fetch('/api/contact', {
@@ -51,6 +51,9 @@ const useEmailStore = create((set, get) => ({
          console.log('bb ~ error:', error);
          get().handleError(error);
       }
+   },
+   reset: () => {
+      set({ isSending: false, isSent: false, errorData: null });
    },
    SendingComponent: () => (
       <div>
