@@ -3,7 +3,7 @@ import validator from 'validator';
 
 const POST = async request => {
    try {
-      const { name, email, message } = await request.json();
+      const { name, email, message, userInfo } = await request.json();
 
       if (/* !name ||  */ !email || !message) {
          return new Response(JSON.stringify({ error: 'All fields are required' }), {
@@ -39,10 +39,13 @@ const POST = async request => {
 
       // Email options
       const mailOptions = {
-         from: process.env.EMAIL_USER, // I think it's sent from my 'to' email, which is fine; including sender email address in the body of the email
+         from: process.env.EMAIL_USER,
          to: process.env.EMAIL_USER,
          subject: `Message from ${sanitizedEmail}`,
-         text: `From: ${sanitizedEmail}\n\nName: ${sanitizedName}\n\n${sanitizedMessage}`
+         text: `From: ${sanitizedEmail}
+         \n\nName: ${sanitizedName}
+         \n\nMessage: ${sanitizedMessage}
+         \n\nUser Info: ${JSON.stringify(userInfo)}`
       };
 
       await transporter.sendMail(mailOptions);

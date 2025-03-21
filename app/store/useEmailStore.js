@@ -1,10 +1,8 @@
 import { create } from 'zustand';
 import { Thanks } from '@/app/components/thanks';
 import { collectUserInfo } from '@/utils/collectUserInfo';
-// import createContact from '@/lib/contactService';
 
 const useEmailStore = create((set, get) => ({
-   //    userInfo: null,
    isSending: false,
    isSent: false,
    errorData: null,
@@ -18,38 +16,13 @@ const useEmailStore = create((set, get) => ({
       set({ isSending: false, isSent: false, errorData: error });
    },
    handleSubmit: async formData => {
-      console.log('Attempting to send email:', formData);
-
       get().handleSending();
 
       try {
          // Add user info to form data
-         formData.userInfo = collectUserInfo();
+         formData.userInfo = await collectUserInfo();
 
          // Save form data to MongoDB
-         //    const contact = await createContact(formData);
-         //    console.log('Contact saved:', contact);
-
-         // // Send email
-         // const response = await fetch('/api/send-email', {
-         //    method: 'POST',
-         //    headers: {
-         //       'Content-Type': 'application/json'
-         //    },
-         //    body: JSON.stringify(formData)
-         // });
-
-         // if (response.ok) {
-         //       get().handleSuccess();
-         //    } else {
-         //       console.log('bb ~ response:', response);
-         //       get().handleError(response);
-         //    }
-         // } catch (error) {
-         //    console.log('bb ~ error:', error);
-         //    get().handleError(error);
-         // }
-
          const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
@@ -61,7 +34,7 @@ const useEmailStore = create((set, get) => ({
          if (response.ok) {
             get().handleSuccess();
 
-            // Send email
+            // Send email -- todo: separate
             const response = await fetch('/api/send-email', {
                method: 'POST',
                headers: {
@@ -69,8 +42,6 @@ const useEmailStore = create((set, get) => ({
                },
                body: JSON.stringify(formData)
             });
-
-            // if (response.ok) {
          } else {
             const errorData = await response.json();
             console.log('bb ~ response:', errorData);
@@ -80,6 +51,9 @@ const useEmailStore = create((set, get) => ({
          console.log('bb ~ error:', error);
          get().handleError(error);
       }
+   },
+   reset: () => {
+      set({ isSending: false, isSent: false, errorData: null });
    },
    SendingComponent: () => (
       <div>

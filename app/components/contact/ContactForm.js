@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import useEmailStore from '@/app/store/useEmailStore';
 import { Form } from '@/app/components/form';
 
@@ -10,8 +11,15 @@ const ContactPage = () => {
       handleSubmit,
       SendingComponent,
       SentComponent,
-      ErrorComponent
+      ErrorComponent,
+      reset
    } = useEmailStore();
+
+   useEffect(() => {
+      return () => {
+         reset();
+      };
+   }, [reset]);
 
    const fields = [
       {
@@ -38,6 +46,11 @@ const ContactPage = () => {
    ];
 
    const isNormal = !isSending && !isSent && !errorData;
+
+   const handleContactSubmit = formData => {
+      handleSubmit(formData);
+      reset();
+   };
 
    return (
       <>
