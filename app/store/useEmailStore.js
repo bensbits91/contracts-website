@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { Thanks } from '@/app/components/thanks';
 import { collectUserInfo } from '@/utils/collectUserInfo';
+// import createContact from '@/lib/contactService';
 
 const useEmailStore = create((set, get) => ({
    //    userInfo: null,
@@ -22,9 +23,34 @@ const useEmailStore = create((set, get) => ({
       get().handleSending();
 
       try {
+         // Add user info to form data
          formData.userInfo = collectUserInfo();
 
-         const response = await fetch('/api/send-email', {
+         // Save form data to MongoDB
+         //    const contact = await createContact(formData);
+         //    console.log('Contact saved:', contact);
+
+         //    // Send email
+         //    const response = await fetch('/api/send-email', {
+         //       method: 'POST',
+         //       headers: {
+         //          'Content-Type': 'application/json'
+         //       },
+         //       body: JSON.stringify(formData)
+         //    });
+
+         //    if (response.ok) {
+         //       get().handleSuccess();
+         //    } else {
+         //       console.log('bb ~ response:', response);
+         //       get().handleError(response);
+         //    }
+         // } catch (error) {
+         //    console.log('bb ~ error:', error);
+         //    get().handleError(error);
+         // }
+
+         const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json'
@@ -35,8 +61,9 @@ const useEmailStore = create((set, get) => ({
          if (response.ok) {
             get().handleSuccess();
          } else {
-            console.log('bb ~ response:', response);
-            get().handleError(response);
+            const errorData = await response.json();
+            console.log('bb ~ response:', errorData);
+            get().handleError(errorData);
          }
       } catch (error) {
          console.log('bb ~ error:', error);
