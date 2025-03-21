@@ -30,16 +30,16 @@ const useEmailStore = create((set, get) => ({
          //    const contact = await createContact(formData);
          //    console.log('Contact saved:', contact);
 
-         //    // Send email
-         //    const response = await fetch('/api/send-email', {
-         //       method: 'POST',
-         //       headers: {
-         //          'Content-Type': 'application/json'
-         //       },
-         //       body: JSON.stringify(formData)
-         //    });
+         // // Send email
+         // const response = await fetch('/api/send-email', {
+         //    method: 'POST',
+         //    headers: {
+         //       'Content-Type': 'application/json'
+         //    },
+         //    body: JSON.stringify(formData)
+         // });
 
-         //    if (response.ok) {
+         // if (response.ok) {
          //       get().handleSuccess();
          //    } else {
          //       console.log('bb ~ response:', response);
@@ -60,6 +60,17 @@ const useEmailStore = create((set, get) => ({
 
          if (response.ok) {
             get().handleSuccess();
+
+            // Send email
+            const response = await fetch('/api/send-email', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(formData)
+            });
+
+            // if (response.ok) {
          } else {
             const errorData = await response.json();
             console.log('bb ~ response:', errorData);
