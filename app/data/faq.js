@@ -323,5 +323,10 @@ However, Ben is NOT an expert in graphic design or branding. If you need detaile
 Yes, Ben can help with content creation for your website. Ben has experience in writing, editing, and content strategy. Ben can provide copywriting services, create blog posts, and develop content that aligns with your brand and goals. Ben can also collaborate with content creators and other team members to ensure the content meets your needs and resonates with your audience.
 
 However, Ben is NOT an expert in marketing content. If you need detailed content marketing services or content-based SEO strategy, Ben can recommend a content marketer or SEO specialist who specializes in those areas.`
+   },
+   {
+      q: 'What component libraries do you use?',
+      a: `
+      I use my own component library and design system for building websites. My component library includes reusable components like buttons, cards, forms, tables and more that I can customize to match your brand and design requirements. I have extensive experience with 3rd-party component libraries too, so if you have a preferred component library or design system, I can work with that as well.`
    }
 ];
