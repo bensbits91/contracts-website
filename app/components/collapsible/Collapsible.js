@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { CircleCaratIcon } from '../icons';
+import { MdClient } from '@/app/components/markdown';
 import styles from './Collapsible.module.css';
 import classNames from '@/utils/classNames';
 
@@ -36,7 +37,9 @@ const Collapsible = ({
                <CircleCaratIcon />
             </div>
          </div>
-         <div className={styles.content}>{content}</div>
+         <div className={styles.content}>
+            <MdClient>{content}</MdClient>
+         </div>
       </div>
    );
 };

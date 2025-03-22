@@ -1,6 +1,6 @@
 .text {
    font-size: 1rem;
-   line-height: 1.5;
+   line-height: 20px;
    /* color: #333; */
 
    &.subtle {

@@ -5,7 +5,7 @@ const List = ({ items, ordered = false, bottom = 'md' }) => {
    const ListElement = (
       <Tag className={styles.list}>
          {items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index} className={styles.item}>{item}</li>
          ))}
       </Tag>
    );
