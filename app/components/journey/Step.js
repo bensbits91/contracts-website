@@ -44,7 +44,7 @@ const Step = () => {
          handleSubmit(finalData);
          resetEmail();
       }
-   }, [currentStep, userInfo, userInputs, userChoices, handleSubmit]);
+   }, [currentStep, userInfo, userInputs, userChoices, handleSubmit, resetEmail]);
 
    useEffect(() => {
       return () => {
