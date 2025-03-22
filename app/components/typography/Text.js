@@ -1,7 +1,7 @@
 import styles from './Text.module.css';
 import classNames from '@/utils/classNames';
 
-const Text = ({ children, top = 'no', bottom = 'sm', variant }) => {
+const Text = ({ children, top = 'no', bottom = 'md', variant }) => {
    const P = (
       <p className={classNames(styles.text, variant && styles[variant])}>{children}</p>
    );
