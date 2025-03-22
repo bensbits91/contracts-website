@@ -15,7 +15,7 @@ const EndStep = ({ step }) => {
                <Heading level='3' top='lg'>
                   What&apos;s next?
                </Heading>
-               <Text top='md' string={whatsNext} />
+               <Text top='md' children={whatsNext} />
             </div>
          )}
          {/* <div>links and icons and such</div> */}

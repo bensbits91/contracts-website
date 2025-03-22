@@ -30,7 +30,7 @@
 
    &.open {
       .content {
-         max-height: 500px;
+         max-height: 700px;
          padding: 12px;
          transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
             padding-top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
