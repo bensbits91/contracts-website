@@ -1,15 +1,12 @@
 {"bottom": "sm", "color": "blue"}
-Heading Two Is Blue
+Your Personal Expert
 ----
 
-This is some normal text
+Why Ben?
 
-- this
-- is
+- deep experience
+- warm and coopoerative
 - a
 - list
 
-1. this
-2. list
-3. is
-4. ordered
+[Read More](/why)

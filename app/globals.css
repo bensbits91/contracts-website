@@ -1,4 +1,6 @@
 :root {
+   font-family: var(--font-geist-sans);
+
    --space-gray: #252b37;
    --white: #ededed;
 
@@ -43,6 +45,25 @@
 .theme-storm {
    --background: var(--space-gray);
    --foreground: color-mix(in oklab, var(--background) 15%, white);
+
+   --bg-lighter-1: color-mix(in oklab, var(--background) 90%, white);
+   --bg-lighter-2: color-mix(in oklab, var(--background) 80%, white);
+   --bg-lighter-3: color-mix(in oklab, var(--background) 70%, white);
+   --bg-lighter-4: color-mix(in oklab, var(--background) 60%, white);
+   --bg-lighter-5: color-mix(in oklab, var(--background) 50%, white);
+   --bg-lighter-6: color-mix(in oklab, var(--background) 40%, white);
+   --bg-lighter-7: color-mix(in oklab, var(--background) 30%, white);
+   --bg-lighter-8: color-mix(in oklab, var(--background) 20%, white);
+   --bg-lighter-9: color-mix(in oklab, var(--background) 10%, white);
+   --bg-darker-1: color-mix(in oklab, var(--background) 90%, black);
+   --bg-darker-2: color-mix(in oklab, var(--background) 80%, black);
+   --bg-darker-3: color-mix(in oklab, var(--background) 70%, black);
+   --bg-darker-4: color-mix(in oklab, var(--background) 60%, black);
+   --bg-darker-5: color-mix(in oklab, var(--background) 50%, black);
+   --bg-darker-6: color-mix(in oklab, var(--background) 40%, black);
+   --bg-darker-7: color-mix(in oklab, var(--background) 30%, black);
+   --bg-darker-8: color-mix(in oklab, var(--background) 20%, black);
+   --bg-darker-9: color-mix(in oklab, var(--background) 10%, black);
 
    --main: var(--blue);
    --yes: var(--lime);
@@ -99,7 +120,7 @@
    --button-clear-border: transparent;
 
    --input-bg: color-mix(in oklab, var(--background) 99%, black);
-   --input-placeholder: /* color-mix(in oklab, var(--background) 30%, */ white/* ) */;
+   --input-placeholder: /* color-mix(in oklab, var(--background) 30%, */ white /* ) */;
 
    --toggle-switch-bg: var(--main);
    --toggle-checked-bg: var(--main);
@@ -131,7 +152,7 @@ body {
 body {
    color: var(--foreground);
    background: var(--background);
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: var(--font-roboto-sans), Arial, Helvetica, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }

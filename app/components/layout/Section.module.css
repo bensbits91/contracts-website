@@ -7,6 +7,24 @@
    &.bg_pop {
       background-color: #222;
    }
+   &.bg_lighter_1 {
+      background-color: var(--bg-lighter-1);
+   }
+   &.bg_lighter_2 {
+      background-color: var(--bg-lighter-2);
+   }
+   &.bg_darker_1 {
+      background-color: var(--bg-darker-1);
+   }
+   &.bg_darker_2 {
+      background-color: var(--bg-darker-2);
+   }
+
+   &.h_full {
+      height: 100vh;
+      padding-top: 30vh;
+      padding-bottom: 30vh;
+   }
 
    &.h_sm,
    &.t_sm {

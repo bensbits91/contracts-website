@@ -6,10 +6,31 @@ import { Section } from '@/app/components/layout';
 export default function Home() {
    return (
       <>
-         <Section height='lg'>
-            <MdRenderer md={getMdContent('home/home-hero')} />
+         <Section height='full' width='sm'>
+            <MdRenderer md={getMdContent('home/hero')} />
          </Section>
-         <Section bg='pop'>
+         <Section height='lg' bg='darker_1'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg' bg='darker_2'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg' bg='lighter_1'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg' bg='lighter_2'>
+            <MdRenderer md={getMdContent('home/home-section-one')} />
+         </Section>
+         <Section height='lg'>
             <MdRenderer md={getMdContent('home/home-section-one')} />
          </Section>
       </>
