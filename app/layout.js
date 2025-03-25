@@ -1,16 +1,16 @@
 import Head from 'next/head';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Nunito, Roboto } from 'next/font/google';
 import { ResponsiveNav } from '@/app/components/nav';
 import { Footer } from '@/app/components/footer';
 import './globals.css';
 
-const geistSans = Geist({
-   variable: '--font-geist-sans',
+const nunitoSans = Nunito({
+   variable: '--font-nunito-sans',
    subsets: ['latin']
 });
 
-const geistMono = Geist_Mono({
-   variable: '--font-geist-mono',
+const robotoSans = Roboto({
+   variable: '--font-roboto-sans',
    subsets: ['latin']
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
          <Head>
             <link rel='icon' type='image/svg+xml' href='/icon.svg' sizes='any' />
          </Head>
-         <body className={`${geistSans.variable} ${geistMono.variable} theme-storm`}>
+         <body className={`${nunitoSans.variable} ${robotoSans.variable} theme-storm`}>
             <ResponsiveNav />
             <main>{children}</main>
             <Footer />

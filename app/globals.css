@@ -1,4 +1,6 @@
 :root {
+   font-family: var(--font-geist-sans);
+
    --space-gray: #252b37;
    --white: #ededed;
 
@@ -44,6 +46,27 @@
    --background: var(--space-gray);
    --foreground: color-mix(in oklab, var(--background) 15%, white);
 
+   --bg-lighter-1: color-mix(in oklab, var(--background) 90%, white);
+   --bg-lighter-2: color-mix(in oklab, var(--background) 80%, white);
+   --bg-lighter-3: color-mix(in oklab, var(--background) 70%, white);
+   --bg-lighter-4: color-mix(in oklab, var(--background) 60%, white);
+   --bg-lighter-5: color-mix(in oklab, var(--background) 50%, white);
+   --bg-lighter-6: color-mix(in oklab, var(--background) 40%, white);
+   --bg-lighter-7: color-mix(in oklab, var(--background) 30%, white);
+   --bg-lighter-8: color-mix(in oklab, var(--background) 20%, white);
+   --bg-lighter-9: color-mix(in oklab, var(--background) 10%, white);
+   --bg-darker-1: color-mix(in oklab, var(--background) 90%, black);
+   --bg-darker-2: color-mix(in oklab, var(--background) 80%, black);
+   --bg-darker-3: color-mix(in oklab, var(--background) 70%, black);
+   --bg-darker-4: color-mix(in oklab, var(--background) 60%, black);
+   --bg-darker-5: color-mix(in oklab, var(--background) 50%, black);
+   --bg-darker-6: color-mix(in oklab, var(--background) 40%, black);
+   --bg-darker-7: color-mix(in oklab, var(--background) 30%, black);
+   --bg-darker-8: color-mix(in oklab, var(--background) 20%, black);
+   --bg-darker-9: color-mix(in oklab, var(--background) 10%, black);
+
+   --bg-dark-gradient: linear-gradient(30deg, var(--bg-lighter-1), var(--bg-darker-1));
+
    --main: var(--blue);
    --yes: var(--lime);
    --no: var(--pink);
@@ -51,8 +74,50 @@
 
    --link: var(--mint);
 
+   --link-lighter-1: color-mix(in oklab, var(--link) 90%, white);
+   --link-lighter-2: color-mix(in oklab, var(--link) 80%, white);
+   --link-lighter-3: color-mix(in oklab, var(--link) 70%, white);
+   --link-lighter-4: color-mix(in oklab, var(--link) 60%, white);
+   --link-lighter-5: color-mix(in oklab, var(--link) 50%, white);
+   --link-lighter-6: color-mix(in oklab, var(--link) 40%, white);
+   --link-lighter-7: color-mix(in oklab, var(--link) 30%, white);
+   --link-lighter-8: color-mix(in oklab, var(--link) 20%, white);
+   --link-lighter-9: color-mix(in oklab, var(--link) 10%, white);
+   --link-darker-1: color-mix(in oklab, var(--link) 90%, black);
+   --link-darker-2: color-mix(in oklab, var(--link) 80%, black);
+   --link-darker-3: color-mix(in oklab, var(--link) 70%, black);
+   --link-darker-4: color-mix(in oklab, var(--link) 60%, black);
+   --link-darker-5: color-mix(in oklab, var(--link) 50%, black);
+   --link-darker-6: color-mix(in oklab, var(--link) 40%, black);
+   --link-darker-7: color-mix(in oklab, var(--link) 30%, black);
+   --link-darker-8: color-mix(in oklab, var(--link) 20%, black);
+   --link-darker-9: color-mix(in oklab, var(--link) 10%, black);
+
+   --link-gradient: linear-gradient(30deg, var(--link-darker-1), var(--link-darker-3));
+
    --link-hover: color-mix(in oklab, var(--link) 80%, white);
    --link-hover-brighter: color-mix(in oklab, var(--link) 60%, white);
+
+   --pink-lighter-1: color-mix(in oklab, var(--pink-2) 90%, white);
+   --pink-lighter-2: color-mix(in oklab, var(--pink-2) 80%, white);
+   --pink-lighter-3: color-mix(in oklab, var(--pink-2) 70%, white);
+   --pink-lighter-4: color-mix(in oklab, var(--pink-2) 60%, white);
+   --pink-lighter-5: color-mix(in oklab, var(--pink-2) 50%, white);
+   --pink-lighter-6: color-mix(in oklab, var(--pink-2) 40%, white);
+   --pink-lighter-7: color-mix(in oklab, var(--pink-2) 30%, white);
+   --pink-lighter-8: color-mix(in oklab, var(--pink-2) 20%, white);
+   --pink-lighter-9: color-mix(in oklab, var(--pink-2) 10%, white);
+   --pink-darker-1: color-mix(in oklab, var(--pink-2) 90%, black);
+   --pink-darker-2: color-mix(in oklab, var(--pink-2) 80%, black);
+   --pink-darker-3: color-mix(in oklab, var(--pink-2) 70%, black);
+   --pink-darker-4: color-mix(in oklab, var(--pink-2) 60%, black);
+   --pink-darker-5: color-mix(in oklab, var(--pink-2) 50%, black);
+   --pink-darker-6: color-mix(in oklab, var(--pink-2) 40%, black);
+   --pink-darker-7: color-mix(in oklab, var(--pink-2) 30%, black);
+   --pink-darker-8: color-mix(in oklab, var(--pink-2) 20%, black);
+   --pink-darker-9: color-mix(in oklab, var(--pink-2) 10%, black);
+
+   --pink-gradient: linear-gradient(30deg, var(--pink-2), var(--pink-darker-2));
 
    --text-subtle: color-mix(in oklab, var(--background) 30%, white);
    --text-selected: color-mix(in oklab, var(--yes) 50%, black);
@@ -99,7 +164,7 @@
    --button-clear-border: transparent;
 
    --input-bg: color-mix(in oklab, var(--background) 99%, black);
-   --input-placeholder: /* color-mix(in oklab, var(--background) 30%, */ white/* ) */;
+   --input-placeholder: /* color-mix(in oklab, var(--background) 30%, */ white /* ) */;
 
    --toggle-switch-bg: var(--main);
    --toggle-checked-bg: var(--main);
@@ -131,7 +196,7 @@ body {
 body {
    color: var(--foreground);
    background: var(--background);
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: var(--font-roboto-sans), Arial, Helvetica, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
