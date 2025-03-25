@@ -1,24 +1,14 @@
 .text {
    font-size: 1rem;
    line-height: 20px;
-   /* color: #333; */
 
    &.subtle {
       color: var(--text-subtle);
    }
 
-   /* &.t_lg {
-      margin-top: 20px;
+   &.inverted {
+      color: var(--background);
    }
-   &.t_sm {
-      margin-top: 4px;
-   }
-   &.b_lg {
-      margin-bottom: 20px;
-   }
-   &.b_sm {
-      margin-bottom: 4px;
-   } */
 }
 
 .t_no {

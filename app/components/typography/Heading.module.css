@@ -46,6 +46,10 @@
    color: var(--blue);
 }
 
+.inverted {
+   color: var(--background);
+}
+
 @media (min-width: 860px) {
    .h1 {
       font-size: 3rem;

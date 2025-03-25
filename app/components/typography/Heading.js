@@ -1,12 +1,22 @@
 import styles from './Heading.module.css';
 import classNames from '@/utils/classNames';
 
-const Heading = ({ children, level = '2', like, color, top = 'no', bottom = 'sm' }) => {
+const Heading = ({
+   children,
+   level = '2',
+   like,
+   color,
+   inverted = false,
+   top = 'no',
+   bottom = 'sm'
+}) => {
    const Tag = `h${level}`;
    const lookLike = like ? `h${like}` : Tag;
 
    const H = (
-      <Tag className={classNames(styles[lookLike], color && styles[color])}>{children}</Tag>
+      <Tag className={classNames(styles[lookLike], color && styles[color], inverted && styles.inverted)}>
+         {children}
+      </Tag>
    );
 
    if (top || bottom) {

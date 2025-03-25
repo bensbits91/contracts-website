@@ -8,6 +8,7 @@ const Button = ({
    onClick,
    href,
    variant = 'primary',
+   inverted = false,
    size = 'md',
    disabled = false
 }) =>
@@ -17,6 +18,7 @@ const Button = ({
          className={classNames(
             styles.button,
             styles[variant],
+            inverted && styles.inverted,
             styles[size],
             disabled && styles.disabled
          )}>
@@ -29,6 +31,7 @@ const Button = ({
          className={classNames(
             styles.button,
             styles[variant],
+            inverted && styles.inverted,
             styles[size],
             disabled && styles.disabled
          )}

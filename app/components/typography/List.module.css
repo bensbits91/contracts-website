@@ -19,3 +19,7 @@
 .b_lg {
    margin-bottom: 40px;
 }
+
+.inverted {
+   color: var(--background);
+}

@@ -6,32 +6,32 @@ import { Section } from '@/app/components/layout';
 export default function Home() {
    return (
       <>
-         <Section height='full' width='sm'>
+         <Section height='full' width='sm' bg='dark_gradient'>
             <MdRenderer md={getMdContent('home/hero')} />
          </Section>
-         <Section height='lg' bg='darker_1'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+         <Section height='lg' bg='darker_2'>
+            <MdRenderer md={getMdContent('home/expert')} />
          </Section>
-         <Section height='lg'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+         <Section height='lg' bg='link_gradient'>
+            <MdRenderer inverted md={getMdContent('home/cta-1')} />
          </Section>
          <Section height='lg' bg='darker_2'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+            <MdRenderer md={getMdContent('home/better-than-wix')} />
          </Section>
-         <Section height='lg'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+         <Section height='lg' bg='link_gradient'>
+            <MdRenderer inverted md={getMdContent('home/discounts')} />
          </Section>
          <Section height='lg' bg='lighter_1'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+            <MdRenderer md={getMdContent('home/expert')} />
          </Section>
-         <Section height='lg'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+         <Section height='lg' bg='pink_gradient'>
+            <MdRenderer inverted md={getMdContent('home/expert')} />
          </Section>
          <Section height='lg' bg='lighter_2'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+            <MdRenderer md={getMdContent('home/expert')} />
          </Section>
          <Section height='lg'>
-            <MdRenderer md={getMdContent('home/home-section-one')} />
+            <MdRenderer md={getMdContent('home/expert')} />
          </Section>
       </>
    );
