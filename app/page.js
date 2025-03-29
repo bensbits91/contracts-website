@@ -21,7 +21,7 @@ export default function Home() {
          <Section height='lg' bg='link_gradient'>
             <MdRenderer inverted md={getMdContent('home/discounts')} />
          </Section>
-         <Section height='lg' bg='lighter_1'>
+         {/* <Section height='lg' bg='lighter_1'>
             <MdRenderer md={getMdContent('home/expert')} />
          </Section>
          <Section height='lg' bg='pink_gradient'>
@@ -32,7 +32,7 @@ export default function Home() {
          </Section>
          <Section height='lg'>
             <MdRenderer md={getMdContent('home/expert')} />
-         </Section>
+         </Section> */}
       </>
    );
 }

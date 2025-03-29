@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
          <body className={`${nunitoSans.variable} ${robotoSans.variable} theme-storm`}>
             <ResponsiveNav />
             <main>{children}</main>
-            <Footer />
+            {/* <Footer /> */}
          </body>
       </html>
    );
