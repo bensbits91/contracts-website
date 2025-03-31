@@ -7,7 +7,7 @@ const Journey = () => {
    return (
       <>
          <Section height='lg'>
-            <Heading level='1'>Journey</Heading>
+            <Heading level='1'>Get a Quote</Heading>
             <div className={styles.steps}>
                <div className={styles.step}>
                   <Step />
