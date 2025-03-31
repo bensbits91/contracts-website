@@ -4,11 +4,10 @@ import styles from './NavLinks.module.css';
 const NavLinks = ({ handleLinkClick = null, isMobile = true }) => {
    const linkDefs = [
       { name: 'Home', path: '/' },
-      // { name: 'About', path: '/about' },
+      { name: 'About', path: '/about' },
       { name: 'Contact', path: '/contact' },
-      { name: 'Why', path: '/why' },
-      { name: 'FAQ', path: '/faq' },
-      { name: 'Quote', path: '/quote' }
+      { name: 'Quote', path: '/quote' },
+      { name: 'FAQ', path: '/faq' }
    ];
 
    return (
