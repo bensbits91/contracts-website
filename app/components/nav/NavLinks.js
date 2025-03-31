@@ -8,7 +8,7 @@ const NavLinks = ({ handleLinkClick = null, isMobile = true }) => {
       { name: 'Contact', path: '/contact' },
       { name: 'Why', path: '/why' },
       { name: 'FAQ', path: '/faq' },
-      { name: 'Journey', path: '/journey' }
+      { name: 'Quote', path: '/quote' }
    ];
 
    return (
