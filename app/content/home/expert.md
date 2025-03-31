@@ -9,4 +9,4 @@ Why Ben?
 - a
 - list
 
-[Read More](/why)
+[Read More](/about)
