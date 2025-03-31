@@ -71,28 +71,28 @@ const designQs = [
       slug: 'design',
       heading: 'Design',
       description: 'Do you need design help?',
+      nextSlug: 'design-type',
       moreInfo:
          'Ben can help with design, or you can provide designs. Ben can also recommend a solid designer or work with your designer.',
-      nextSlug: 'content-storage',
       choices: [
          {
             text: 'Yes, I need design help',
             description: 'I need help designing my website or app.',
             moreInfo:
-               "Ben can help with design, recommend a one of his preferred designers or work with your designer. Ben's designer will help us create a Figma or Sketch file with style definitions to facilitate fast development and iteration.",
-            nextSlug: 'design-type'
+               "Ben can help with design, recommend a one of his preferred designers or work with your designer. Ben's designer will help us create a Figma or Sketch file with style definitions to facilitate fast development and iteration."
          },
          {
             text: "No, I don't need help with design",
             description: 'I have a design ready to go.',
             moreInfo:
-               'The more detail you can provide, the quicker I can achieve your vision. For example, a Figma or Sketch file with style definitions facilitates fast development and iteration. I can also work with any design system or style guide. If you have a design but need help with implementation, I can help with that too. If you like an existing website or app, I can emulate the design.'
+               'The more detail you can provide, the quicker I can achieve your vision. For example, a Figma or Sketch file with style definitions facilitates fast development and iteration. I can also work with any design system or style guide. If you have a design but need help with implementation, I can help with that too. If you like an existing website or app, I can emulate the design.',
+            nextSlug: 'content-storage'
          }
       ]
    },
    {
       slug: 'design-type',
-      showIf: [{ stepSlug: 'design', choiceText: 'Need design help' }],
+      showIf: [{ stepSlug: 'design', choiceText: 'Yes, I need design help' }],
       heading: 'Design Type',
       description: 'What type of design do you need?',
       moreInfo: '',
@@ -101,9 +101,15 @@ const designQs = [
       choices: [
          {
             text: 'UI/UX',
-            description: '',
+            description: 'User interface and user experience design.',
             moreInfo:
                'UI/UX design focuses on creating intuitive and engaging interfaces that provide a seamless user experience. This includes wireframes, prototypes, and user testing to ensure the design meets user needs.'
+         },
+         {
+            text: 'Theme(s)',
+            description: 'Make my website or app look and feel a certain way. Possibly multiple themes.',
+            moreInfo:
+               "Dark and light themes. Enable users to select from multiple themes. If users can log in, they can save their theme preference.",
          },
          {
             text: 'Branding',
@@ -121,7 +127,7 @@ const designQs = [
    },
    {
       slug: 'design-vision',
-      showIf: [{ stepSlug: 'design', choiceText: 'Need design help' }],
+      showIf: [{ stepSlug: 'design', choiceText: 'Yes, I need design help' }],
       heading: 'Design Vision',
       description: 'Do you have a design vision?',
       moreInfo: '',
@@ -155,7 +161,7 @@ const designQs = [
    },
    {
       slug: 'designers',
-      showIf: [{ stepSlug: 'design', choiceText: 'Need design help' }],
+      showIf: [{ stepSlug: 'design', choiceText: 'Yes, I need design help' }],
       heading: 'Designers',
       description: 'Who will provide the design?',
       moreInfo: '',
