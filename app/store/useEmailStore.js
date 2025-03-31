@@ -65,7 +65,7 @@ const useEmailStore = create((set, get) => ({
          heading='Thanks :)'
          content="I'll get back to you ASAP"
          links={[
-            { text: 'Have a project in mind?', href: '/journey' },
+            { text: 'Have a project in mind?', href: '/quote' },
             { text: 'Any questions?', href: '/faq' }
          ]}
       />
