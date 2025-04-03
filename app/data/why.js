@@ -30,6 +30,11 @@ export const why = [
          'I use modern tools like React for dynamic user interfaces and and Next.js for super-speedy static content. I can also implement multi-tiered caching strategies and CDNs for enhanced performance.'
    },
    {
+      heading: 'Proven Technologies',
+      content:
+         "I use tools that are widely adopted and well-supported, ensuring your website is built on a solid foundation. I'm not trying to impress anyone by adopting the latest fad; I want to deliver a product that is reliable and maintainable."
+   },
+   {
       heading: 'User Experience',
       content:
          'I prioritize user experience, creating intuitive and engaging interfaces that keep visitors on your site longer.'
