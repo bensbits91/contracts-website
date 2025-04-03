@@ -41,7 +41,7 @@
    }
 
    &.h_full {
-      height: 100vh;
+      min-height: 100vh;
       padding-top: 30vh;
       padding-bottom: 30vh;
    }
