@@ -9,16 +9,16 @@ export default function Home() {
          <Section height='full' width='sm' bg='dark_gradient'>
             <MdRenderer md={getMdContent('home/hero')} />
          </Section>
-         <Section height='lg' bg='darker_2'>
-            <MdRenderer md={getMdContent('home/expert')} />
-         </Section>
-         <Section height='lg' bg='link_gradient'>
+         <Section height='full' bg='link_gradient'>
             <MdRenderer inverted md={getMdContent('home/cta-1')} />
          </Section>
-         <Section height='lg' bg='darker_2'>
+         <Section height='full' bg='darker_2'>
+            <MdRenderer md={getMdContent('home/expert')} />
+         </Section>
+         <Section height='full' bg='darker_2'>
             <MdRenderer md={getMdContent('home/better-than-wix')} />
          </Section>
-         <Section height='lg' bg='link_gradient'>
+         <Section height='full' bg='link_gradient'>
             <MdRenderer inverted md={getMdContent('home/discounts')} />
          </Section>
          {/* <Section height='lg' bg='lighter_1'>

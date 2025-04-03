@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Nunito, Roboto } from 'next/font/google';
 import { ResponsiveNav } from '@/app/components/nav';
-import { Footer } from '@/app/components/footer';
+// import { Footer } from '@/app/components/footer';
 import './globals.css';
 
 const nunitoSans = Nunito({
@@ -15,9 +15,9 @@ const robotoSans = Roboto({
 });
 
 export const metadata = {
-   title: 'Ben Brooks Dev',
+   title: 'Ben Brooks Contract Dev',
    description:
-      'Ben Brooks Dev is a personal portfolio site for Ben Brooks, a full-stack web developer.'
+      'Marketing and informational site for Ben Brooks, a full-stack web developer.'
 };
 
 export default function RootLayout({ children }) {
