@@ -15,11 +15,11 @@ export default function Home() {
          <Section height='full' bg='darker_2'>
             <MdRenderer md={getMdContent('home/expert')} />
          </Section>
-         <Section height='full' bg='darker_2'>
-            <MdRenderer md={getMdContent('home/better-than-wix')} />
-         </Section>
          <Section height='full' bg='link_gradient'>
             <MdRenderer inverted md={getMdContent('home/discounts')} />
+         </Section>
+         <Section height='lg' bg='darker_2'>
+            <MdRenderer md={getMdContent('home/better-than-wix')} />
          </Section>
          {/* <Section height='lg' bg='lighter_1'>
             <MdRenderer md={getMdContent('home/expert')} />
