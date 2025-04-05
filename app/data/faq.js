@@ -327,6 +327,6 @@ However, Ben is NOT an expert in marketing content. If you need detailed content
    {
       q: 'What component libraries do you use?',
       a: `
-      I use my own component library and design system for building websites. My component library includes reusable components like buttons, cards, forms, tables and more that I can customize to match your brand and design requirements. I have extensive experience with 3rd-party component libraries too, so if you have a preferred component library or design system, I can work with that as well.`
+I prefer to use my own component library and design system for building websites. They are fast and customizable. My component library includes reusable components like buttons, cards, forms, tables and more that I can customize to match your brand and design requirements. I have extensive experience with 3rd-party component libraries too, so if you have a preferred component library or design system, I can work with that as well.`
    }
 ];
