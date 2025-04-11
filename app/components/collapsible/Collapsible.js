@@ -32,7 +32,7 @@ const Collapsible = ({
          className={classNames(styles.collapsible, isOpen && styles.open)}
          onClick={toggle}>
          <div className={styles.title}>
-            {title}
+         <div className={styles.text}>{title}</div>
             <div className={styles.iconWrap}>
                <CircleCaratIcon />
             </div>
