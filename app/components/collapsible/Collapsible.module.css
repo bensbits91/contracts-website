@@ -9,6 +9,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
+
+      .text {
+         width: calc(100% - 35px);
+      }
 
       .iconWrap {
          width: 35px;
